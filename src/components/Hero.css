@@ -1,0 +1,56 @@
+.hero {
+  /* background-color: var(--color-primary); */
+  background-image: url(./loud-1.jpg);
+  background-position: 50%;
+  background-size: cover;
+  background-attachment: fixed;
+  color: var(--color-text-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--spacing-xl) var(--spacing-lg);
+  min-height: 60vh;
+}
+
+.hero__content {
+  max-width: 800px;
+}
+
+.hero__title {
+  font-family: var(--font-secondary);
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.2;
+}
+
+.hero__subtitle {
+  font-family: var(--font-primary);
+  color: var(--color-accent);
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: var(--spacing-lg);
+  opacity: 0.9;
+}
+
+.hero__cta {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+  font-family: var(--font-primary);
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border: none;
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero__cta:hover {
+  background-color: #e6bf4a; /* A slightly lighter gold */
+  transform: translateY(-2px);
+} 

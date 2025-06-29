@@ -1,0 +1,27 @@
+.help-center-container {
+  max-width: 900px;
+  margin: var(--spacing-xl) auto;
+  padding: 0 var(--spacing-lg);
+}
+
+.help-center-header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.help-center-header h1 {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.help-center-header p {
+  font-size: 1.2rem;
+  color: var(--color-secondary);
+}
+
+.help-center-content h2 {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 2px solid var(--color-accent);
+} 

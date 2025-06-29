@@ -1,0 +1,24 @@
+.site-footer {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  padding: var(--spacing-lg) 0;
+  text-align: center;
+  margin-top: var(--spacing-xl);
+}
+
+.site-footer__wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+.site-footer p {
+  font-family: var(--font-primary);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.site-footer p:first-child {
+  font-weight: 600;
+  margin-bottom: var(--spacing-sm);
+} 

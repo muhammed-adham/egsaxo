@@ -18,7 +18,7 @@ const Header = () => {
       <header className="site-header">
         <div className="site-header__wrapper">
           <div className="site-header__brand">
-            <Link to="/"><span>EG</span>SAXO</Link>
+            {/* <Link to="/"><span>EG</span>SAX </Link> */}
             <nav className="site-header__nav">
               <ul>
                { navLinks.map((link,idx)=>(

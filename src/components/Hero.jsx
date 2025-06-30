@@ -7,6 +7,7 @@ const Hero = () => {
       <div className="hero__content">
         <h1 className="hero__title">The First Store for Saxophone Accessories</h1>
         <p className="hero__subtitle">Crafted for the discerning musician in Egypt.</p>
+        {/* <img src="./logo-icon.svg" alt="" /> */}
         {/* <button className="hero__cta">Shop Now</button> */}
         {/* <img src="./loud.jpg" alt="" /> */}
       </div>

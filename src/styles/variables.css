@@ -6,18 +6,18 @@
   /* Colors */
   --color-primary: #1a1a1a; /* Deep Charcoal/Almost Black */
   --color-secondary: #4a4a4a; /* Dark Gray */
-  --color-accent: #4500e0; /* Old Gold */
+  --color-accent: #000000; /* Old Gold */
   --color-background: #fdfdfd; /* Off-White */
   --color-text: #333333;
   --color-text-light: #ffffff;
   --color-border: #e0e0e0;
 
   /* Spacing */
-  --spacing-xs: 4px;
-  --spacing-sm: 8px;
-  --spacing-md: 16px;
-  --spacing-lg: 32px;
-  --spacing-xl: 64px;
+  --spacing-xs: .25rem;
+  --spacing-sm: .5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 4rem;
 
   /* Border Radius */
   --border-radius-sm: 4px;

@@ -1,15 +1,18 @@
 .site-header {
-  background-color: var(--color-background);
+  background-color: transparent;
   padding: var(--spacing-md) 0;
-  border-bottom: 1px solid var(--color-border);
+  /* border-bottom: 1px solid var(--color-border); */
   box-shadow: var(--box-shadow);
+  position: absolute;
+  width: 100vw;
+  z-index: 1;
 }
 
 .site-header__wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
+  max-width: 1360px;
   margin: 0 auto;
   padding: 0 var(--spacing-lg);
 }
@@ -22,6 +25,7 @@
 
 .site-header__brand span{
   font-size: 1.2rem;
+  font-family: var(--font-primary);
 }
 
 .site-header__brand a {
@@ -30,12 +34,19 @@
   font-weight: 700;
   color: var(--color-primary);
   text-decoration: none;
+  position: relative;
 }
 
-.site-header__nav{
-  border-left: 1px solid black;
-  padding-inline: 4rem;
-}
+/* .site-header__brand>a::after{
+position: absolute;
+content: "";
+width: 1.5rem;
+height: 1.25rem;
+right: -1.5rem;
+top: 1rem;
+background-color: black;
+border-radius: 50%;
+} */
 
 .site-header__nav ul {
   display: flex;

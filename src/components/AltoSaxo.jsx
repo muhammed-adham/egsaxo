@@ -57,15 +57,16 @@ const AltoSaxo = () => {
       src="/saxophone_alto.glb"
       alt="Soulpiece"
       camera-orbit="-180deg 120deg 100m"
-      // environment-image="legacy" // or "legacy", "studio", or a custom HDR
+      environment-image="legacy" // or "legacy", "studio", or a custom HDR
       style={{
         // filter: 'grayscale(30%)', // makes it black and white
-        filter: 'brightness(.8) saturate(33) contrast(5) grayscale(100%)',
+        filter: 'brightness(.8) saturate(0) contrast(10) grayscale(100%)',
         position: 'absolute',
-        right: '40rem',
-        bottom: '3rem',
+        left: '-24rem',
+        bottom: '-8rem',
         width: '100%',
-        height: '70rem',
+        height: '74rem',
+        transform:"rotate(-10deg)"
       }}
     ></model-viewer>
   );

@@ -4,12 +4,20 @@
   --font-secondary: 'Cormorant Garamond', serif;
 
   /* Colors */
-  --color-primary: #1a1a1a; /* Deep Charcoal/Almost Black */
-  --color-secondary: #4a4a4a; /* Dark Gray */
-  --color-accent: #000000; /* Old Gold */
-  --color-background: #fdfdfd; /* Off-White */
-  --color-text: #333333;
+  --color-primary: #000;
+  /* Deep Charcoal/Almost Black */
+  --color-secondary: #4a4a4a;
+  /* Dark Gray */
+  --color-accent: #BF9E39;
+  /* Old Gold */
+  --gradient-accent: linear-gradient(135deg, #DFD08B, #BF9E39 50%);
+  --color-background: #fdfdfd;
+  /* Off-White */
+  --color-background-primary: #afafaf;
+  /* Off-White */
+  --color-text: #000;
   --color-text-light: #ffffff;
+  --color-text-hover: #808080;
   --color-border: #e0e0e0;
 
   /* Spacing */
@@ -25,4 +33,4 @@
 
   /* Box Shadow */
   --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-} 
+}

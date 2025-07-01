@@ -25,7 +25,7 @@ const UserDropdown = () => {
 
   return (
     <div className="user-dropdown" ref={dropdownRef}>
-      <button className={`${isOpen?"active":""} user-dropdown__button`} onClick={toggleDropdown}>
+      <button className={`${isOpen ? "active" : ""} user-dropdown__button`} onClick={toggleDropdown}>
         <ProfileIcon />
         <span>Hi, {username}</span>
         <span className="user-dropdown__arrow">{isOpen ? '▲' : '▼'}</span>

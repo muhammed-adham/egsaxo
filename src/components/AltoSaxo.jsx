@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import '@google/model-viewer';
+import './AltoSaxo.css'
 
 const AltoSaxo = () => {
   const modelRef = useRef();
@@ -51,24 +52,29 @@ const AltoSaxo = () => {
     };
   }, [hasAnimated]);
 
+
+
   return (
-    <model-viewer
-      ref={modelRef}
-      src="/saxophone_alto.glb"
-      alt="Soulpiece"
-      camera-orbit="-180deg 120deg 100m"
-      environment-image="legacy" // or "legacy", "studio", or a custom HDR
-      style={{
-        // filter: 'grayscale(30%)', // makes it black and white
-        filter: 'brightness(.8) saturate(0) contrast(10) grayscale(100%)',
-        position: 'absolute',
-        left: '-24rem',
-        bottom: '-8rem',
-        width: '100%',
-        height: '74rem',
-        transform:"rotate(-10deg)"
-      }}
-    ></model-viewer>
+    <div className="model__container" style={{
+      
+    }}>
+      <model-viewer
+        ref={modelRef}
+        src="/saxophone_alto.glb"
+        alt="Soulpiece"
+        camera-orbit="-180deg 120deg 100m"
+        environment-image="legacy" // or "legacy", "studio", or a custom HDR
+        // auto-rotate
+        style={{
+          filter: 'brightness(.8) saturate(0) contrast(10) grayscale(100%)',
+          width: '100%',
+          height: '74rem',
+          position: 'absolute',
+          bottom: '-6rem',
+          transform: "rotate(-10deg)"
+        }}
+      ></model-viewer>
+    </div>
   );
 };
 

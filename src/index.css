@@ -50,3 +50,35 @@ ul {
 *::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */
 }
+
+/* Fade-in-up animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+.fade-in-up.delay-1 {
+  animation-delay: 0.1s;
+}
+.fade-in-up.delay-2 {
+  animation-delay: 0.3s;
+}
+.fade-in-up.delay-3 {
+  animation-delay: 0.5s;
+}
+.fade-in-up.delay-4 {
+  animation-delay: 0.7s;
+}
+.fade-in-up.delay-5 {
+  animation-delay: 0.9s;
+}

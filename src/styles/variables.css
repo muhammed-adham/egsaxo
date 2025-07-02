@@ -12,6 +12,7 @@
   /* Old Gold */
   --gradient-accent: linear-gradient(135deg, #DFD08B, #BF9E39 50%);
   --color-background: #fdfdfd;
+  --color-background-transparent: rgba(248, 248, 248, 0.7);
   /* Off-White */
   --color-background-primary: #afafaf;
   /* Off-White */
@@ -29,7 +30,7 @@
 
   /* Border Radius */
   --border-radius-sm: 4px;
-  --border-radius-md: 8px;
+  --border-radius-md: 24px;
 
   /* Box Shadow */
   --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);

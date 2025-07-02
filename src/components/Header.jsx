@@ -8,13 +8,14 @@ import './Header.css';
 
 const Header = () => {
   const navLinks=[
-    {label:"Shop", url:'/'},
+    {label:"Home", url:'/'},
+    {label:"Shop", url:'/shop'},
     {label:"About", url:'/about'},
     {label:"Policy", url:'/policy'}
   ]
   return (
     <>
-      <AnnouncementBar />
+      {/* <AnnouncementBar /> */}
       <header className="site-header">
         <div className="site-header__wrapper">
           <div className="site-header__brand">

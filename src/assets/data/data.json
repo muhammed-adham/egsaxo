@@ -1,0 +1,55 @@
+{
+  "products": [
+    {
+      "id": "001",
+      "title": "Thomann 1045 Prof Saxophone Strap",
+      "name": "Leather Carrying Strap for Saxophone",
+      "description": [
+        "Orthopaedic shaped neck padding made of fine cow leather",
+        "Pad insert made of natural rubber",
+        "Extra padding",
+        "Metal eyelets",
+        "Will not cut into the neck area",
+        "Adjustable with just one hand",
+        "Glass fibre reinforced carabiner"
+      ],
+      "image": ["path/to/image.jpg"],
+      "category": "straps",
+      "price": 100,
+      "price_sale": 50
+    },
+    {
+      "id": "002",
+      "title": "Protec LC305M Neck Strap",
+      "name": "Neck strap for alto, tenor and baritone saxophone",
+      "description": [
+        "Neck padding made of leather",
+        "Tri-Point metal spacer bar for maximized comfort",
+        "Carabiner",
+        "Length (neck padding to carabiner end approx. 48 - 60 cm)",
+        "Color: Black"
+      ],
+      "image": ["path/to/image.jpg"],
+      "category": "straps",
+      "price": 100,
+      "price_sale": 50
+    },
+    {
+      "id": "003",
+      "title": "Rico Reed Guard IV Clar / Alto sax",
+      "name": "Reed Guard",
+      "description": [
+        "Made of plastic",
+        "For 4 clarinet/alto saxophone reeds",
+        "Allows even reed ventilation",
+        "Convenient and easy to store",
+        "Color: Black",
+        "Plastic"
+      ],
+      "image": ["path/to/image.jpg"],
+      "category": "Reed Guard",
+      "price": 100,
+      "price_sale": 50
+    }
+  ]
+}

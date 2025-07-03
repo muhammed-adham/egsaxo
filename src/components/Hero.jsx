@@ -4,7 +4,7 @@ import BtnPrimary from "./BtnPrimary";
 import BtnOutline from "./BtnOutline";
 import { useNavigate } from "react-router-dom";
 
-const Hero = () => {
+const Hero = ({ onExplore }) => {
   const navigate = useNavigate();
   return (
     <section className="hero">
@@ -25,7 +25,7 @@ const Hero = () => {
         <BtnPrimary
           label={"Explore Collection"}
           className="fade-in-up delay-4"
-          onClick={() => navigate("/shop")}
+          onClick={onExplore}
         />
         <div className="btn__container fade-in-up delay-5">
           <BtnOutline label={"Why Us "} />

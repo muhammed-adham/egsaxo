@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Filters.css';
 
-const accessoryFilters = ['All','Reeds', 'Grease', 'Straps', 'Brush', 'Stands', 'Cases'];
+const accessoryFilters = ['All','Reeds', 'Grease', 'Straps', 'Brush', /* 'Stands' */, 'Cases'];
 
 const Filters = () => {
   const [selectedSaxType, setSelectedSaxType] = useState('alto');

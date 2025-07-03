@@ -4,10 +4,10 @@ import Filters from '../components/Filters'
 
 const Shop = () => {
   return (
-    <>
+    <div className='shop__page' style={{minHeight:'100vh'}}>
     <Filters/>
      <ProductList />
-    </>
+    </div>
   )
 }
 

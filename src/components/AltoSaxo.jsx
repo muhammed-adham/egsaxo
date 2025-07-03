@@ -1,11 +1,12 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, forwardRef, useImperativeHandle } from 'react';
 import '@google/model-viewer';
 import './AltoSaxo.css'
 
-const AltoSaxo = () => {
+const AltoSaxo = forwardRef((props, ref) => {
   const modelRef = useRef();
   const [hasAnimated, setHasAnimated] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isSpinning, setIsSpinning] = useState(false);
   const animationFrameRef = useRef();
   const currentRotationRef = useRef({ azimuth: -60, elevation: 120 });
   const targetRotationRef = useRef({ azimuth: -60, elevation: 120 });
@@ -60,6 +61,7 @@ const AltoSaxo = () => {
 
   // Mouse tracking effect
   useEffect(() => {
+    if (isSpinning) return; // Disable mouse tracking during spin
     const handleMouseMove = (e) => {
       const x = (e.clientX / window.innerWidth) * 2 - 1; // -1 to 1
       const y = (e.clientY / window.innerHeight) * 2 - 1; // -1 to 1
@@ -69,12 +71,11 @@ const AltoSaxo = () => {
 
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
+  }, [isSpinning]);
 
   // Smooth rotation following mouse
   useEffect(() => {
-    if (!hasAnimated) return;
-
+    if (!hasAnimated || isSpinning) return; // Disable during spin
     const model = modelRef.current;
     if (!model) return;
 
@@ -131,7 +132,7 @@ const AltoSaxo = () => {
         cancelAnimationFrame(animationFrameRef.current);
       }
     };
-  }, [mousePosition, hasAnimated]);
+  }, [mousePosition, hasAnimated, isSpinning]);
 
   // Cleanup on unmount
   useEffect(() => {
@@ -141,6 +142,35 @@ const AltoSaxo = () => {
       }
     };
   }, []);
+
+  useImperativeHandle(ref, () => ({
+    spin: () => {
+      const model = modelRef.current;
+      if (!model) return;
+      setIsSpinning(true);
+      const startAzimuth = currentRotationRef.current.azimuth;
+      const finalAzimuth = startAzimuth + 360;
+      const elevation = currentRotationRef.current.elevation;
+      const radius = 100;
+      const duration = 1200;
+      const startTime = performance.now();
+      const easeInOut = t => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+      function animate(time) {
+        const elapsed = time - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = easeInOut(progress);
+        const currentAzimuth = startAzimuth + (finalAzimuth - startAzimuth) * eased;
+        model.setAttribute('camera-orbit', `${currentAzimuth.toFixed(2)}deg ${elevation.toFixed(2)}deg ${radius}m`);
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        } else {
+          currentRotationRef.current.azimuth = (startAzimuth + 360) % 360;
+          setIsSpinning(false);
+        }
+      }
+      requestAnimationFrame(animate);
+    }
+  }));
 
   return (
     <div className="model__container" style={{
@@ -164,6 +194,6 @@ const AltoSaxo = () => {
       ></model-viewer>
     </div>
   );
-};
+});
 
 export default AltoSaxo;

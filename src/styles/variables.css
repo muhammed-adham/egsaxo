@@ -1,16 +1,16 @@
 :root {
   /* Font Families */
   --font-primary: 'Raleway', sans-serif;
-  --font-secondary: 'Cormorant Garamond', serif;
+  --font-secondary: 'Cinzel Decorative', serif;
 
   /* Colors */
   --color-primary: #000;
   /* Deep Charcoal/Almost Black */
-  --color-secondary: #4a4a4a;
+  --color-secondary:#95A612;
   /* Dark Gray */
-  --color-accent: #BF9E39;
+  --color-accent: #DDF23D;
   /* Old Gold */
-  --gradient-accent: linear-gradient(135deg, #DFD08B, #BF9E39 50%);
+  --gradient-accent: linear-gradient(135deg, #DDF23D, #95A612 150%);
   --color-background: #fdfdfd;
   --color-background-transparent: rgba(248, 248, 248, 0.7);
   /* Off-White */

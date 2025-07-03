@@ -57,7 +57,7 @@
 .user-dropdown__menu li a:hover,
 .user-dropdown__menu li button:hover {
   background-color: var(--color-accent);
-  color: var(--color-text-light);
+  color: var(--color-text);
 }
 
 .user-dropdown__logout {
@@ -66,7 +66,7 @@
   font-weight: 600;
 }
 .user-dropdown__logout:hover {
-  color: var(--color-text) !important;
+  /* color: var(--color-text) !important; */
   /* A reddish color for logout */
   font-weight: 600;
 }

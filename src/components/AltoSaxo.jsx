@@ -4,7 +4,11 @@ import './AltoSaxo.css'
 
 const AltoSaxo = () => {
   const modelRef = useRef();
-  const [hasAnimated, setHasAnimated] = useState(false); // in-memory only
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const animationFrameRef = useRef();
+  const currentRotationRef = useRef({ azimuth: -60, elevation: 120 });
+  const targetRotationRef = useRef({ azimuth: -60, elevation: 120 });
 
   useEffect(() => {
     const model = modelRef.current;
@@ -39,7 +43,9 @@ const AltoSaxo = () => {
           requestAnimationFrame(animate);
         } else {
           model.setAttribute('camera-orbit', `${finalAzimuth}deg ${finalElevation}deg ${radius}m`);
-          setHasAnimated(true); // no more animations in this session
+          currentRotationRef.current = { azimuth: finalAzimuth, elevation: finalElevation };
+          targetRotationRef.current = { azimuth: finalAzimuth, elevation: finalElevation };
+          setHasAnimated(true);
         }
       };
 
@@ -52,7 +58,89 @@ const AltoSaxo = () => {
     };
   }, [hasAnimated]);
 
+  // Mouse tracking effect
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      const x = (e.clientX / window.innerWidth) * 2 - 1; // -1 to 1
+      const y = (e.clientY / window.innerHeight) * 2 - 1; // -1 to 1
+      
+      setMousePosition({ x, y });
+    };
 
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  // Smooth rotation following mouse
+  useEffect(() => {
+    if (!hasAnimated) return;
+
+    const model = modelRef.current;
+    if (!model) return;
+
+    // Calculate target rotation based on mouse position
+    const baseAzimuth = -60;
+    const baseElevation = 120;
+    const maxRotationRange = 12; // degrees of rotation in each direction
+    
+    // Invert Y axis for more natural feeling
+    const targetAzimuth = baseAzimuth + (mousePosition.x * maxRotationRange);
+    const targetElevation = baseElevation + (-mousePosition.y * maxRotationRange * 0.5); // Less vertical movement
+    
+    targetRotationRef.current = { 
+      azimuth: targetAzimuth, 
+      elevation: Math.max(90, Math.min(150, targetElevation)) // Clamp elevation
+    };
+
+    // Smooth interpolation
+    const smoothRotation = () => {
+      const current = currentRotationRef.current;
+      const target = targetRotationRef.current;
+      
+      // Lerp factor - lower = smoother/slower
+      const lerpFactor = 0.05;
+      
+      const newAzimuth = current.azimuth + (target.azimuth - current.azimuth) * lerpFactor;
+      const newElevation = current.elevation + (target.elevation - current.elevation) * lerpFactor;
+      
+      currentRotationRef.current = { azimuth: newAzimuth, elevation: newElevation };
+      
+      model.setAttribute(
+        'camera-orbit',
+        `${newAzimuth.toFixed(2)}deg ${newElevation.toFixed(2)}deg 100m`
+      );
+      
+      // Continue animation if we haven't reached the target
+      const azimuthDiff = Math.abs(target.azimuth - newAzimuth);
+      const elevationDiff = Math.abs(target.elevation - newElevation);
+      
+      if (azimuthDiff > 0.1 || elevationDiff > 0.1) {
+        animationFrameRef.current = requestAnimationFrame(smoothRotation);
+      }
+    };
+
+    // Cancel previous animation frame
+    if (animationFrameRef.current) {
+      cancelAnimationFrame(animationFrameRef.current);
+    }
+    
+    animationFrameRef.current = requestAnimationFrame(smoothRotation);
+
+    return () => {
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
+    };
+  }, [mousePosition, hasAnimated]);
+
+  // Cleanup on unmount
+  useEffect(() => {
+    return () => {
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
+    };
+  }, []);
 
   return (
     <div className="model__container" style={{
@@ -63,8 +151,8 @@ const AltoSaxo = () => {
         src="/saxophone_alto.glb"
         alt="Soulpiece"
         camera-orbit="-180deg 120deg 100m"
-        environment-image="legacy" // or "legacy", "studio", or a custom HDR
-        // auto-rotate
+        environment-image="legacy"
+        
         style={{
           filter: 'brightness(.8) saturate(0) contrast(10) grayscale(100%)',
           width: '100%',

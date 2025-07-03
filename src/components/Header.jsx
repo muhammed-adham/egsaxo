@@ -8,8 +8,7 @@ import './Header.css';
 
 const Header = () => {
   const navLinks=[
-    {label:"Home", url:'/'},
-    {label:"Shop", url:'/shop'},
+    {label:"Shop", url:'/'},
     {label:"About", url:'/about'},
     {label:"Policy", url:'/policy'}
   ]

@@ -43,11 +43,11 @@
 .hero__logo::after {
   content: "";
   position: absolute;
-  width: 4.4rem;
-  height: 5.1rem;
+  width: 4rem;
+  height: 5.4rem;
   background-color: var(--color-text);
-  top: 1.5rem;
-  right: .8rem;
+  top: .8rem;
+  right: 1.5rem;
   border-radius: 50%;
 }
 
@@ -61,10 +61,11 @@
 } */
 
 .hero__logo span {
-  font-family: var(--font-primary);
+  font-family: var(--font-secondary);
   font-size: 4rem;
-  font-weight: 700;
+  font-weight: 100;
   color: var(--color-text);
+
 }
 
 .hero__title {

@@ -19,6 +19,7 @@
 }
 
 .cta__primary:hover {
+  color: var(--color-text);
   background: var(--gradient-accent);
   /* A slightly lighter gold */
   box-shadow: 0px 2px 4px rgba(0, 0, 0, .3);

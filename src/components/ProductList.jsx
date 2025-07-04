@@ -3,10 +3,14 @@ import ProductCard from './ProductCard';
 import './ProductList.css';
 
 const dummyProducts = [
-  { id: 1, name: 'Alto Saxophone Reeds', price: '350', imageUrl: 'https://placehold.co/400x400/DDF23D/1a1a1a?text=Reeds' },
-  { id: 2, name: 'Tenor Saxophone Strap', price: '500', imageUrl: 'https://placehold.co/400x400/DDF23D/1a1a1a?text=Strap' },
-  { id: 3, name: 'Cork Grease', price: '150', imageUrl: 'https://placehold.co/400x400/DDF23D/1a1a1a?text=Grease' },
-  { id: 4, name: 'Saxophone Cleaning Brush', price: '250', imageUrl: 'https://placehold.co/400x400/DDF23D/1a1a1a?text=Brush' },
+  { id: 1, name: 'Alto Reeds', price: '350', imageUrl: './Products/10634512_800.jpg' },
+  { id: 2, name: 'Tenor Strap', price: '500', imageUrl: './Products/10382675_800.jpg' },
+  { id: 3, name: 'Cork Grease', price: '150', imageUrl: './Products/10839031_800.jpg' },
+  { id: 4, name: ' Cleaning Brush', price: '250', imageUrl: './Products/11522249_800.jpg' },
+  { id: 5, name: 'Alto Reeds', price: '350', imageUrl: './Products/11522264_800.jpg' },
+  { id: 6, name: 'Tenor Strap', price: '500', imageUrl: './Products/10634512_800.jpg' },
+  { id: 7, name: 'Cork Grease', price: '150', imageUrl: './Products/10634512_800.jpg' },
+  { id: 8, name: 'Cleaning Brush', price: '250', imageUrl: './Products/10634512_800.jpg' },
   // Add more products as needed
 ];
 

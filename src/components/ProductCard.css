@@ -1,3 +1,13 @@
+.card-container{
+  position: relative;
+  transform-style: preserve-3d;
+  z-index: 0;
+}
+
+.card-container:hover{
+  z-index: 1;
+}
+
 .product-card {
   background-color: var(--color-background);
   border: 1px solid var(--color-border);
@@ -9,25 +19,47 @@
   flex-direction: column;
   /* transform-origin: center; */
   transform-style: preserve-3d;
+  padding: var(--spacing-md);
+  gap: 1rem;
+  cursor: pointer;
 }
 
 .product-card:hover {
+  position: absolute;
+  width: 100%;
   transform: translateY(-5px);
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
 }
 
 .product-card__image-container {
   width: 100%;
-  display: none;
-  padding-top: 100%; /* 1:1 Aspect Ratio */
   position: relative;
   border-radius: var(--border-radius-md) var(--border-radius-md) 0 0;
-  background-color: #f0f0f0;
+  /* background-color: #f0f0f0; */
+  background-color: var(--color-background);
+  /*padding-top: 100%; /* 1:1 Aspect Ratio */ 
+  height: 5rem;
   overflow: hidden;
 }
 
-.product-card:hover .product-card__image-container{
-  display: block;
+.product-card:hover .product-card__image-container {
+  height: 16rem;
+}
+
+.product-card__image-container img{
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.product-card__brand{
+  height: 1rem;
+}
+
+.product-card__brand img{
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
 }
 
 .product-card__image {
@@ -40,7 +72,7 @@
 }
 
 .product-card__info {
-  padding: var(--spacing-md);
+  /* padding: var(--spacing-md); */
   text-align: center;
   flex-grow: 1;
   display: flex;
@@ -52,24 +84,32 @@
 }
 
 .product-card__name {
-  font-family: var(--font-secondary);
+  font-family: var(--font-primary);
   font-size: 1.2rem;
   font-weight: 600;
-  margin-bottom: var(--spacing-sm);
   height: 4rem;
+  height: fit-content;
   /* transform: translateZ(16px); */
 }
 
 .product-card__price {
+  display: none;
   font-family: var(--font-primary);
   font-size: 1.1rem;
   font-weight: 700;
   color: var(--color-secondary);
   margin-bottom: var(--spacing-md);
-  display: flex;
   align-items: center;
   justify-content: center;
-  transform: translateZ(24px);
+  transform: translateX(-50%) translateZ(24px);
+  position: absolute;
+  left: 50%;
+  bottom: 20%;
+  /* transform: translate(-50%,-50%); */
+}
+
+.product-card:hover .product-card__price{
+  display: flex;
 }
 
 .product-card__button {

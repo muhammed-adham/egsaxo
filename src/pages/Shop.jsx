@@ -1,14 +1,16 @@
-import React from 'react'
-import ProductList from '../components/ProductList'
-import Filters from '../components/Filters'
+import React from "react";
+import ProductList from "../components/ProductList";
+import Filters from "../components/Filters";
+import Banner from "../components/Banner";
 
 const Shop = () => {
   return (
-    <div className='shop__page' style={{minHeight:'100vh'}}>
-    <Filters/>
-     <ProductList />
-    </div>
-  )
-}
+    <>
+      <Banner />
+      <Filters />
+      <ProductList />
+    </>
+  );
+};
 
-export default Shop
+export default Shop;

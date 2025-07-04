@@ -4,6 +4,7 @@
       "id": "001",
       "title": "Thomann 1045 Prof Saxophone Strap",
       "name": "Leather Carrying Strap for Saxophone",
+      "brand":"Thomann",
       "description": [
         "Orthopaedic shaped neck padding made of fine cow leather",
         "Pad insert made of natural rubber",
@@ -22,6 +23,7 @@
       "id": "002",
       "title": "Protec LC305M Neck Strap",
       "name": "Neck strap for alto, tenor and baritone saxophone",
+      "brand":"Protec",
       "description": [
         "Neck padding made of leather",
         "Tri-Point metal spacer bar for maximized comfort",
@@ -38,6 +40,7 @@
       "id": "003",
       "title": "Rico Reed Guard IV Clar / Alto sax",
       "name": "Reed Guard",
+      "brand":"Rico",
       "description": [
         "Made of plastic",
         "For 4 clarinet/alto saxophone reeds",
@@ -48,6 +51,21 @@
       ],
       "image": ["path/to/image.jpg"],
       "category": "Reed Guard",
+      "price": 100,
+      "price_sale": 50
+    },
+    {
+      "id": "004",
+      "title": "Opti-Care Swab for Alto Saxophone",
+      "name": "Swab for Alto Saxophone",
+      "brand":"Helin`",
+      "description": [
+        "Cleans instrument thoroughly",
+        "Protects the pads from moisture",
+        "Material mix made of cotton and synthetic fiber"
+      ],
+      "image": ["path/to/image.jpg"],
+      "category": "Brush",
       "price": 100,
       "price_sale": 50
     }

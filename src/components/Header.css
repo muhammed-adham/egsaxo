@@ -39,10 +39,12 @@
   /* transition: color 0.3s ease; */
 }
 
-.site-header__nav a:hover,
-.site-header__nav a.active {
+.site-header__nav a:hover{
   color: var(--color-text-hover);
-  text-decoration: none;
+}
+
+ a.active {
+color: var(--color-secondary);
 }
 
 .site-header__actions {

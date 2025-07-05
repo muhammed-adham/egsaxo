@@ -17,9 +17,12 @@
   gap: var(--spacing-sm);
 }
 
-.user-dropdown__button:hover,
-.user-dropdown__button.active {
+.user-dropdown__button:hover{
   color: var(--color-text-hover);
+}
+
+.user-dropdown__button.active {
+  color: var(--color-secondary);
 }
 
 .user-dropdown__menu {

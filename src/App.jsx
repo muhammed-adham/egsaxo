@@ -5,6 +5,7 @@ import AboutPage from "./pages/AboutPage";
 import PolicyPage from "./pages/PolicyPage";
 import CartPage from "./pages/CartPage";
 import HelpCenterPage from "./pages/HelpCenterPage";
+import ProductPage from "./pages/ProductPage";
 import {
   CustomerLayout,
   AccountDetails,
@@ -23,6 +24,7 @@ const App = () => {
       element: <Layout />,
       children: [
         { path: '/shop', element: <Shop /> },
+        { path: '/product/:id', element: <ProductPage /> },
         { path: "/about", element: <AboutPage /> },
         { path: "/policy", element: <PolicyPage /> },
         { path: "/cart", element: <CartPage /> },

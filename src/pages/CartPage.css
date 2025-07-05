@@ -3,6 +3,7 @@
   margin: var(--spacing-xl) auto;
   padding: 0 var(--spacing-lg);
   text-align: center;
+  min-height: 40vh;
 }
 
 .cart-page-container h1 {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import AnnouncementBar from './AnnouncementBar';
 import CartIcon from './CartIcon';
 import HelpIcon from './HelpIcon';
@@ -22,21 +22,21 @@ const Header = () => {
               <ul>
                { navLinks.map((link,idx)=>(
                   
-                  <li key={idx}><Link to={link.url}>{link.label}</Link></li>
+                  <li key={idx}><NavLink to={link.url}>{link.label}</NavLink></li>
                 ))}
               </ul>
             </nav>
           </div>
           <div className="site-header__actions">
             <UserDropdown />
-            <Link to="/help-center" className="site-header__icon-link">
+            <NavLink to="/help-center" className="site-header__icon-link">
               <HelpIcon />
               <span>Help</span>
-            </Link>
-            <Link to="/cart" className="site-header__icon-link">
+            </NavLink>
+            <NavLink to="/cart" className="site-header__icon-link">
               <CartIcon />
               <span>Cart</span>
-            </Link>
+            </NavLink>
           </div>
         </div>
       </header>

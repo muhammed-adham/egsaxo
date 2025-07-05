@@ -1,0 +1,6 @@
+.slide1{
+    height: calc(100vh/11);
+    width: 100%;
+    background-color: red;
+    position: absolute;
+}

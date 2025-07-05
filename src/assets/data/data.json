@@ -3,8 +3,8 @@
     {
       "id": "001",
       "title": "Thomann 1045 Prof Saxophone Strap",
-      "name": "Leather Carrying Strap for Saxophone",
-      "brand":"Thomann",
+      "sub_title": "Leather Carrying Strap for Saxophone",
+      "brand": "https://res.cloudinary.com/dph1b3jla/image/upload/v1751637627/thomann-cyan-black_copy_il4cde.png",
       "description": [
         "Orthopaedic shaped neck padding made of fine cow leather",
         "Pad insert made of natural rubber",
@@ -14,16 +14,22 @@
         "Adjustable with just one hand",
         "Glass fibre reinforced carabiner"
       ],
-      "image": ["path/to/image.jpg"],
+      "image": [
+        "https://res.cloudinary.com/dph1b3jla/image/upload/v1751636914/10634512_800_mb1jzm.jpg",
+        "https://res.cloudinary.com/dph1b3jla/image/upload/v1751636915/10634522_800_zbndcd.jpg",
+        "https://res.cloudinary.com/dph1b3jla/image/upload/v1751636915/10634517_800_yxfov9.jpg"
+      ],
+      "Instrument": ["alto", "tenor", "soprano"],
       "category": "straps",
-      "price": 100,
-      "price_sale": 50
+      "price": 3600,
+      "price_sale": null,
+      "badge":null
     },
     {
       "id": "002",
       "title": "Protec LC305M Neck Strap",
-      "name": "Neck strap for alto, tenor and baritone saxophone",
-      "brand":"Protec",
+      "sub_title": "Neck strap for alto, tenor and baritone saxophone",
+      "brand": "https://res.cloudinary.com/dph1b3jla/image/upload/v1751637624/protec_1_ev08hb.png",
       "description": [
         "Neck padding made of leather",
         "Tri-Point metal spacer bar for maximized comfort",
@@ -31,16 +37,23 @@
         "Length (neck padding to carabiner end approx. 48 - 60 cm)",
         "Color: Black"
       ],
-      "image": ["path/to/image.jpg"],
+      "image": [
+        "https://res.cloudinary.com/dph1b3jla/image/upload/v1751636966/11522249_800_gmgmux.jpg",
+        "https://res.cloudinary.com/dph1b3jla/image/upload/v1751637053/11522264_800_qnlkrl.jpg",
+        "https://res.cloudinary.com/dph1b3jla/image/upload/v1751637052/11522259_800_kdlc2b.jpg",
+        "https://res.cloudinary.com/dph1b3jla/image/upload/v1751637054/11522269_800_arftkn.jpg"
+      ],
+      "Instrument": ["alto", "tenor"],
       "category": "straps",
-      "price": 100,
-      "price_sale": 50
+      "price": 4500,
+      "price_sale": null,
+      "badge":"limited"
     },
     {
       "id": "003",
-      "title": "Rico Reed Guard IV Clar / Alto sax",
-      "name": "Reed Guard",
-      "brand":"Rico",
+      "title": "Rico Reed Guard IV Alto sax",
+      "sub_title": "Reed Guard",
+      "brand": "https://res.cloudinary.com/dph1b3jla/image/upload/v1751637625/rico-e1466104917561_copy_wn3s7f.png",
       "description": [
         "Made of plastic",
         "For 4 clarinet/alto saxophone reeds",
@@ -49,25 +62,150 @@
         "Color: Black",
         "Plastic"
       ],
-      "image": ["path/to/image.jpg"],
-      "category": "Reed Guard",
-      "price": 100,
-      "price_sale": 50
+      "image": [
+        "https://res.cloudinary.com/dph1b3jla/image/upload/v1751637026/10839031_800_iihngi.jpg",
+        "https://res.cloudinary.com/dph1b3jla/image/upload/v1751637027/10839021_800_iuwfpp.jpg",
+        "https://res.cloudinary.com/dph1b3jla/image/upload/v1751637028/10839036_800_m85wmd.jpg"
+      ],
+      "Instrument": ["alto"],
+      "category": "reed",
+      "price": 750,
+      "price_sale": null,
+      "badge":null
     },
     {
       "id": "004",
       "title": "Opti-Care Swab for Alto Saxophone",
-      "name": "Swab for Alto Saxophone",
-      "brand":"Helin`",
+      "sub_title": "Swab for Alto Saxophone",
+      "brand": "https://res.cloudinary.com/dph1b3jla/image/upload/v1751711514/gewa_music_logo_black_aojjh2.png",
       "description": [
         "Cleans instrument thoroughly",
         "Protects the pads from moisture",
-        "Material mix made of cotton and synthetic fiber"
+        "Material mix made of cotton and synthetic fiber",
+        "Color may vary"
       ],
-      "image": ["path/to/image.jpg"],
-      "category": "Brush",
-      "price": 100,
-      "price_sale": 50
+      "image": [
+        "https://res.cloudinary.com/dph1b3jla/image/upload/v1751637099/10382675_800_jnvkai.jpg",
+        "https://res.cloudinary.com/dph1b3jla/image/upload/v1751637101/10382680_800_qaboj1.jpg",
+        "https://res.cloudinary.com/dph1b3jla/image/upload/v1751637103/10382690_800_xh4hco.jpg"
+      ],
+      "Instrument": ["alto"],
+      "category": "opti-care",
+      "price": 1500,
+      "price_sale": null,
+      "badge":"limited"
+    },
+    {
+      "id": "005",
+      "title": "Opti-Care Swab for Mouthpieces",
+      "sub_title": "Mouthpiece Swab",
+      "brand": "https://res.cloudinary.com/dph1b3jla/image/upload/v1751711514/gewa_music_logo_black_aojjh2.png",
+      "description": ["For saxophone", "Color may vary"],
+      "image": [
+        "https://res.cloudinary.com/dph1b3jla/image/upload/v1751637138/10586528_800_w1khc6.jpg",
+        "https://res.cloudinary.com/dph1b3jla/image/upload/v1751637155/10586538_800_qd6pes.jpg"
+      ],
+      "Instrument": ["alto", "tenor"],
+      "category": "opti-care",
+      "price": 180,
+      "price_sale": null,
+      "badge":null
+    },
+    {
+      "id": "006",
+      "title": "DAddario Woodwinds La Voz Alto Saxophone MH",
+      "sub_title": "Reed for Alto Saxophone MH",
+      "brand": "https://res.cloudinary.com/dph1b3jla/image/upload/v1751637602/la_voz_akjxds.png",
+      "description": [
+        "Strength: Medium hard",
+        "Similar to Rico reeds",
+        "La Voz reeds are unfiled and feature a thinner profile",
+        "A deep and powerful tone has made La Voz reeds a standard among jazz musicians",
+        "Unfiled reeds provide more resistance",
+        "Works well for various music styles"
+      ],
+      "image": [
+        "https://res.cloudinary.com/dph1b3jla/image/upload/v1751637180/14874775_800_qwrest.jpg",
+        "https://res.cloudinary.com/dph1b3jla/image/upload/v1751637179/14874800_800_wipqns.jpg",
+        "https://res.cloudinary.com/dph1b3jla/image/upload/v1751637185/14874795_800_d1lsot.jpg",
+        "https://res.cloudinary.com/dph1b3jla/image/upload/v1751637183/14874785_800_mxki1y.jpg"
+      ],
+      "Instrument": ["alto"],
+      "category": "reed",
+      "price": 250,
+      "price_sale": null,
+      "badge":null
+    },
+    {
+      "id": "007",
+      "title": "DAddario Woodwinds Organic Sel. Jazz Filed SOP 2H",
+      "sub_title": "Reed for Soprano Saxophone 2H",
+      "brand": "https://res.cloudinary.com/dph1b3jla/image/upload/v1751637604/logo_daddario_1color_on_white_nrixar.png",
+      "description": [
+        "Strength: 2H (hard)",
+        "Filed",
+        "The Organic Select Jazz tip produces excellent projection and a clear, full sound",
+        "Outstanding control and projection",
+        "Great articulation flexibility",
+        "D'Addario Organic reeds are the first certified organic reeds on the market, giving players peace of mind that they are doing what is best for their health and the environment",
+        "Next generation digital technologies ensure that every D'Addario Organic reed of the same strength is exactly the same as each other",
+        "D'Addario reeds are designed in the USA and made from naturally grown reeds"
+      ],
+      "image": [
+        "https://res.cloudinary.com/dph1b3jla/image/upload/v1751637248/17659380_800_dcivor.jpg",
+        "https://res.cloudinary.com/dph1b3jla/image/upload/v1751637239/17659374_800_u7tuf7.jpg",
+        "https://res.cloudinary.com/dph1b3jla/image/upload/v1751637249/17659841_800_rkbgkb.jpg",
+        "https://res.cloudinary.com/dph1b3jla/image/upload/v1751637244/17659378_800_vo26bx.jpg"
+      ],
+      "Instrument": ["soprano"],
+      "category": "reed",
+      "price": 250,
+      "price_sale": null,
+      "badge":null
+    },
+    {
+      "id": "008",
+      "title": "Yanagisawa Body Protector Alto Sax",
+      "sub_title": "Body Protector for Alto Saxophone",
+      "brand": "https://res.cloudinary.com/dph1b3jla/image/upload/v1751643520/yanagisawa_gypwpu.png",
+      "description": [
+        "Body Protector",
+        "Made of plastic",
+        "Transportation lock for the protection of octave mechanics"
+      ],
+      "image": [
+        "https://res.cloudinary.com/dph1b3jla/image/upload/v1751637300/19366725_800_ps1dlj.jpg",
+        "https://res.cloudinary.com/dph1b3jla/image/upload/v1751637296/19366723_800_usxzd5.jpg",
+        "https://res.cloudinary.com/dph1b3jla/image/upload/v1751637298/19366724_800_frxyt7.jpg"
+      ],
+      "Instrument": ["alto"],
+      "category": "opti-care",
+      "price": 850,
+      "price_sale": null,
+      "badge":null
+    },
+    {
+      "id": "009",
+      "title": "La Tromba AG Slide and Cork Grease 15g",
+      "sub_title": "Valve and Cork Grease",
+      "brand": "https://res.cloudinary.com/dph1b3jla/image/upload/v1751637600/la_tromba_ag.jpg_copy_vr1ybg.png",
+      "description": [
+        "Insulates the slides from condensation and prevents the inner slides from corrosion and getting stuck",
+        "A relatively stiff grease with the ideal consistency for promoting optimal movement of the slides",
+        "Also commonly used as sealing lubrication of slides whose precision is not optimal",
+        "Ideal grease for maintaining and greasing the connections on woodwind instruments",
+        "The cork is protected from moisture and remains supple - and this alongside ideal lubricating properties",
+        "Contents: 15 g"
+      ],
+      "image": [
+        "https://res.cloudinary.com/dph1b3jla/image/upload/v1751637433/13665786_800_xxox1g.jpg",
+        "https://res.cloudinary.com/dph1b3jla/image/upload/v1751637431/13665781_800_og0hqx.jpg"
+      ],
+      "Instrument": ["alto", "tenor", "soprano"],
+      "category": "grease",
+      "price": 600,
+      "price_sale": null,
+      "badge":"limited"
     }
   ]
 }

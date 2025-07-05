@@ -1,12 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Filters.css';
 
-const accessoryFilters = ['All','Reeds', 'Grease', 'Straps', 'Brush', /* 'Stands' */, 'Cases'];
+const accessoryFilters = ['All','Reed', 'Grease', 'Straps', 'Opti-Care'];
 
-const Filters = () => {
-  const [selectedSaxType, setSelectedSaxType] = useState('alto');
-  const [activeAccessory, setActiveAccessory] = useState('All');
-
+const Filters = ({ selectedSaxType, setSelectedSaxType, activeAccessory, setActiveAccessory }) => {
   return (
     <section className="filters-container">
       <div className="main-filter">
@@ -16,8 +13,10 @@ const Filters = () => {
           value={selectedSaxType} 
           onChange={(e) => setSelectedSaxType(e.target.value)}
         >
+          <option value="All">All</option>
           <option value="alto">Alto</option>
           <option value="tenor">Tenor</option>
+          <option value="soprano">Soprano</option>
         </select>
       </div>
       <div className="quick-filters">

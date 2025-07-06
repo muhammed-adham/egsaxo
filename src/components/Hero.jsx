@@ -24,11 +24,9 @@ const Hero = ({ onExplore }) => {
             accessories to elevate your tone, comfort, and performance.
           </p>
           {/* <button className="hero__cta">Shop Now</button> */}
-          <BtnPrimary
-            label={"Explore Collection"}
-            className="fade-in-up delay-4"
-            onClick={onExplore}
-          />
+          <div className="btn__primary-container fade-in-up delay-4">
+            <BtnPrimary label={"Explore Collection"} onClick={onExplore} />
+          </div>
           <div className="btn__container fade-in-up delay-5">
             <BtnOutline label={"Why Us "} />
             <BtnOutline label={"FAQ & Policy"} />

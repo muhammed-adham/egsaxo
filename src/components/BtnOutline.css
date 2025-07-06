@@ -17,7 +17,7 @@
   align-items: center;
   justify-content: center;
   flex-grow: 1;
-  gap: .2rem;
+  gap: .6rem;
 }
 
 .cta__outline:hover {

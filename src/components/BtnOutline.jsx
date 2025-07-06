@@ -1,9 +1,10 @@
 import React from 'react'
 import './BtnOutline.css'
 
-const BtnOutline = ({label}) => {
+const BtnOutline = ({ label, disabled = false, className = '', onClick }) => {
   return (
-    <button className="cta__outline">{label}</button>
+    <button disabled={disabled} className={`cta__outline ${className}`} onClick={onClick}>{label}
+    </button>
   )
 }
 

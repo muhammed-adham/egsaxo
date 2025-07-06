@@ -1,12 +1,14 @@
 import React from 'react'
 import './BtnPrimary.css'
 import { HiArrowSmRight } from 'react-icons/hi'
+import { GiSaxophone } from 'react-icons/gi'
 
-const BtnPrimary = ({ label, showIcon = true, className = '' ,onClick}) => {
+const BtnPrimary = ({ label, showIcon = true, disabled = false, className = '', onClick }) => {
   return (
-    <button className={`cta__primary ${className}`} onClick={onClick}>{label}
-      {showIcon && <HiArrowSmRight size={24} />}
-      </button>
+    <button disabled={disabled} className={`cta__primary ${className}`} onClick={onClick}>
+      {label}
+    {showIcon && <GiSaxophone  size={24} />}
+    </button>
 
   )
 }

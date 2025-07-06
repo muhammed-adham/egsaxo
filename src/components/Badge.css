@@ -1,0 +1,39 @@
+.product-badge{
+    position: absolute;
+    top: .4rem;
+    left: .4rem;
+    background-color: var(--color-secondary);
+    border-radius:var(--border-radius-md);
+    padding: .2rem .3rem;
+    font-size: .7rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--color-text-light);
+    z-index: 1;
+    width: fit-content;
+  }
+
+  .product-badge-xl {
+    top: 1rem;
+    left: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .badge-disable{
+    display: none;
+  }
+
+  .on-sale{
+    background: var(--color-flash);
+  }
+
+  .limit-stock{
+    background: var(--color-info);
+  }
+  
+  .sold-out{
+    background: var(--color-warning);
+  }

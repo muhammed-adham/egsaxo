@@ -1,5 +1,4 @@
 .cta__outline {
-  /* background-color: var(--color-primary); */
   background: transparent;
   border: 1px solid var(--color-primary);
   color: var(--color-text);
@@ -14,13 +13,19 @@
   transition: background-color 0.3s ease, transform 0.3s ease;
   z-index: 1;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  gap: .2rem;
 }
 
 .cta__outline:hover {
-  border-color: var(--color-text-hover);
-  color: var(--color-text-hover);
+  transform: translateY(-2px);
+  border-color: var(--color-secondary);
+  color: var(--color-secondary);
+  /* box-shadow: 0px 2px 4px rgba(0, 0, 0, .3); */
   /* color: var(--color-text-light); */
   /* A slightly lighter gold */
-  /* box-shadow: 0px 2px 4px rgba(0, 0, 0, .3); */
   /* transform: translateY(-2px); */
 }

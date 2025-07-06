@@ -23,7 +23,7 @@
       "category": "straps",
       "price": 3600,
       "price_sale": null,
-      "badge":null
+      "quantity":3
     },
     {
       "id": "002",
@@ -43,11 +43,11 @@
         "https://res.cloudinary.com/dph1b3jla/image/upload/v1751637052/11522259_800_kdlc2b.jpg",
         "https://res.cloudinary.com/dph1b3jla/image/upload/v1751637054/11522269_800_arftkn.jpg"
       ],
-      "Instrument": ["alto", "tenor"],
+      "Instrument": ["alto", "tenor", "soprano"],
       "category": "straps",
       "price": 4500,
       "price_sale": null,
-      "badge":"limited"
+      "quantity":1
     },
     {
       "id": "003",
@@ -71,7 +71,7 @@
       "category": "reed",
       "price": 750,
       "price_sale": null,
-      "badge":null
+      "quantity":3
     },
     {
       "id": "004",
@@ -93,7 +93,7 @@
       "category": "opti-care",
       "price": 1500,
       "price_sale": null,
-      "badge":"limited"
+      "quantity":2
     },
     {
       "id": "005",
@@ -109,7 +109,7 @@
       "category": "opti-care",
       "price": 180,
       "price_sale": null,
-      "badge":null
+      "quantity":5
     },
     {
       "id": "006",
@@ -134,7 +134,7 @@
       "category": "reed",
       "price": 250,
       "price_sale": null,
-      "badge":null
+      "quantity":10
     },
     {
       "id": "007",
@@ -161,7 +161,7 @@
       "category": "reed",
       "price": 250,
       "price_sale": null,
-      "badge":null
+      "quantity":10
     },
     {
       "id": "008",
@@ -182,12 +182,12 @@
       "category": "opti-care",
       "price": 850,
       "price_sale": null,
-      "badge":null
+      "quantity":3
     },
     {
       "id": "009",
       "title": "La Tromba AG Slide and Cork Grease 15g",
-      "sub_title": "Valve and Cork Grease",
+      "sub_title": "Valve and Cork Grease 15g",
       "brand": "https://res.cloudinary.com/dph1b3jla/image/upload/v1751637600/la_tromba_ag.jpg_copy_vr1ybg.png",
       "description": [
         "Insulates the slides from condensation and prevents the inner slides from corrosion and getting stuck",
@@ -205,7 +205,7 @@
       "category": "grease",
       "price": 600,
       "price_sale": null,
-      "badge":"limited"
+      "quantity":2
     }
   ]
 }

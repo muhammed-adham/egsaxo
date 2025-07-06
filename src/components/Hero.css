@@ -88,6 +88,7 @@
 }
 
 .btn__container{
+  width: 100%;
   display: flex;
   gap: .4rem;
 }

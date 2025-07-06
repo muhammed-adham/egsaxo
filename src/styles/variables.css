@@ -6,7 +6,7 @@
   /* Colors */
   --color-primary: #000;
   /* Deep Charcoal/Almost Black */
-  --color-secondary:#95A612;
+  --color-secondary: #95A612;
   /* Dark Gray */
   --color-accent: #DDF23D;
   /* Old Gold */
@@ -20,6 +20,13 @@
   --color-text-light: #ffffff;
   --color-text-hover: #808080;
   --color-border: #e0e0e0;
+
+  /* Status Colors */
+  --color-success: #97dd3f;     /* Soft green */
+  --color-warning: #1a1a1a;     /* Warm amber */
+  --color-danger:#eb1000;      /* Calm blue */
+  --color-info:#00dbff;  
+  --color-flash: #ff46d1;      /* Rich red */
 
   /* Spacing */
   --spacing-xs: .25rem;

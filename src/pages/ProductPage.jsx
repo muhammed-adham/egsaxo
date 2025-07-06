@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import data from '../assets/data/data.json';
 import './ProductPage.css';
+import Badge from '../components/Badge';
+import BtnPrimary from '../components/BtnPrimary';
+import BtnOutline from '../components/BtnOutline';
 
 const ProductPage = () => {
   const { id } = useParams();
@@ -18,8 +21,12 @@ const ProductPage = () => {
     }
   }, [product]);
 
+  useEffect(() => {
+    setSelectedImage(0);
+  }, [id]);
+
   const handleQuantityChange = (newQuantity) => {
-    if (newQuantity >= 1) {
+    if (newQuantity >= 1 && newQuantity <= product.quantity) {
       setQuantity(newQuantity);
     }
   };
@@ -84,11 +91,8 @@ const ProductPage = () => {
                 alt={product.title}
                 className="main-image"
               />
-              {product.badge && (
-                <div className="product-badge">{product.badge}</div>
-              )}
+              <Badge product={product} xl={true} />
             </div>
-            
             {product.image.length > 1 && (
               <div className="image-thumbnails">
                 {product.image.map((img, index) => (
@@ -110,7 +114,7 @@ const ProductPage = () => {
               <div className="brand-logo">
                 <img src={product.brand} alt="Brand" />
               </div>
-              <h1 className="product-title">{product.title}</h1>
+              <h2 className="product-title">{product.title}</h2>
               <p className="product-subtitle">{product.sub_title}</p>
             </div>
 
@@ -155,36 +159,49 @@ const ProductPage = () => {
             </div>
 
             <div className="product-actions">
-              <div className="quantity-selector">
-                <label htmlFor="quantity">Quantity:</label>
-                <div className="quantity-controls">
-                  <button
-                    onClick={() => handleQuantityChange(quantity - 1)}
-                    disabled={quantity <= 1}
-                    className="quantity-btn"
-                  >
-                    -
-                  </button>
-                  <input
-                    type="number"
-                    id="quantity"
-                    value={quantity}
-                    onChange={(e) => handleQuantityChange(parseInt(e.target.value) || 1)}
-                    min="1"
-                    className="quantity-input"
-                  />
-                  <button
-                    onClick={() => handleQuantityChange(quantity + 1)}
-                    className="quantity-btn"
-                  >
-                    +
-                  </button>
-                </div>
+              <div className="stock-info">
+                <span className="stock-label">Stock:</span>
+                <span className={`stock-amount ${product.quantity === 0 ? 'out-of-stock' : product.quantity <= 2 ? 'low-stock' : ''}`}>
+                  {/* {product.quantity === 0 ? 'Out of Stock' : `${product.quantity} ${product.quantity === 1 ? 'item' : 'items'} available`} */}
+                  {product.quantity === 0 ? 'Out of Stock' : product.quantity <= 2 ? `${product.quantity} ${product.quantity === 1 ? 'item' : 'items'} Available` : `Available`}
+                </span>
               </div>
 
+              {product.quantity > 0 && (
+                <div className="quantity-selector">
+                  <label htmlFor="quantity">Quantity:</label>
+                  <div className="quantity-controls">
+                    <button
+                      onClick={() => handleQuantityChange(quantity - 1)}
+                      disabled={quantity <= 1}
+                      className="quantity-btn"
+                    >
+                      -
+                    </button>
+                    <input
+                      type="number"
+                      id="quantity"
+                      value={quantity}
+                      onChange={(e) => handleQuantityChange(parseInt(e.target.value) || 1)}
+                      min="1"
+                      max={product.quantity}
+                      className="quantity-input"
+                    />
+                    <button
+                      onClick={() => handleQuantityChange(quantity + 1)}
+                      disabled={quantity >= product.quantity}
+                      className="quantity-btn"
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+              )}
+
               <div className="action-buttons">
-                <button
+                {/* <button
                   onClick={handleAddToCart}
+                  disabled={product.quantity === 0}
                   className="add-to-cart-btn"
                 >
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -192,18 +209,35 @@ const ProductPage = () => {
                     <circle cx="20" cy="21" r="1"></circle>
                     <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
                   </svg>
-                  Add to Cart
-                </button>
-                <button
+                  {product.quantity === 0 ? 'Out of Stock' : 'Add to Cart'}
+                </button> */}
+
+                <BtnOutline
+                  disabled={product.quantity === 0}
+                  label={
+                    <>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                      </svg>
+                      {product.quantity === 0 ? 'Out of Stock' : 'Add to Cart'}
+
+                    </>
+                  } />
+
+                <BtnPrimary showIcon={false} label={product.quantity === 0 ? 'Out of Stock' : 'Buy Now'} disabled={product.quantity === 0} />
+                {/* <button
                   onClick={handleBuyNow}
+                  disabled={product.quantity === 0}
                   className="buy-now-btn"
                 >
-                  Buy Now
-                </button>
+                  {product.quantity === 0 ? 'Out of Stock' : 'Buy Now'}
+                </button> */}
               </div>
             </div>
 
-            <div className="product-features">
+            {/* <div className="product-features">
               <div className="feature-item">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M20 6L9 17l-5-5"></path>
@@ -222,30 +256,37 @@ const ProductPage = () => {
                 </svg>
                 <span>Warranty Included</span>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
-
+        <hr />
         {/* Related Products Section */}
-        <div className="related-products">
-          <h2>You might also like</h2>
-          <div className="related-products-grid">
-            {data?.products
-              ?.filter(p => p.id !== product.id && p.category === product.category)
-              ?.slice(0, 4)
-              ?.map(relatedProduct => (
-                <div
-                  key={relatedProduct.id}
-                  className="related-product-card"
-                  onClick={() => navigate(`/product/${relatedProduct.id}`)}
-                >
-                  <img src={relatedProduct.image[0]} alt={relatedProduct.title} />
-                  <h4>{relatedProduct.sub_title}</h4>
-                  <p>{formatPrice(relatedProduct.price)}</p>
-                </div>
-              ))}
-          </div>
-        </div>
+        {data?.products
+          ?.filter(p => p.id !== product.id && p.category === product.category)
+          ?.slice(0, 4)?.length > 0 && (
+            <div className="related-products">
+              <h2>You might also like</h2>
+              <div className="related-products-grid">
+                {data?.products
+                  ?.filter(p => p.id !== product.id && p.category === product.category)
+                  ?.slice(0, 4)
+                  ?.map(relatedProduct => (
+                    <div
+                      key={relatedProduct.id}
+                      className="related-product-card"
+                      onClick={() => {
+                        navigate(`/product/${relatedProduct.id}`);
+                        window.scrollTo(0, 0);
+                      }}
+                    >
+                      <img src={relatedProduct.image[0]} alt={relatedProduct.title} />
+                      <h4>{relatedProduct.sub_title}</h4>
+                      <p>{formatPrice(relatedProduct.price)}</p>
+                    </div>
+                  ))}
+              </div>
+            </div>
+          )}
       </div>
     </div>
   );

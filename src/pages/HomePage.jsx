@@ -12,7 +12,7 @@ const HomePage = () => {
       altoSaxoRef.current.spin();
       setTimeout(() => {
         navigate('/shop');
-      }, 1200); // same spin duration
+      }, 800); // same spin duration
     } else {
       navigate('/shop');
     }

@@ -21,10 +21,6 @@ const ProductPage = () => {
     }
   }, [product]);
 
-  useEffect(() => {
-    setSelectedImage(0);
-  }, [id]);
-
   const handleQuantityChange = (newQuantity) => {
     if (newQuantity >= 1 && newQuantity <= product.quantity) {
       setQuantity(newQuantity);
@@ -274,10 +270,7 @@ const ProductPage = () => {
                     <div
                       key={relatedProduct.id}
                       className="related-product-card"
-                      onClick={() => {
-                        navigate(`/product/${relatedProduct.id}`);
-                        window.scrollTo(0, 0);
-                      }}
+                      onClick={() =>( navigate(`/product/${relatedProduct.id}`),scroll(0,0), setSelectedImage(0))}
                     >
                       <img src={relatedProduct.image[0]} alt={relatedProduct.title} />
                       <h4>{relatedProduct.sub_title}</h4>

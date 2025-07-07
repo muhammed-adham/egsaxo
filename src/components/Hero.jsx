@@ -3,7 +3,6 @@ import "./Hero.css";
 import BtnPrimary from "./BtnPrimary";
 import BtnOutline from "./BtnOutline";
 import { useNavigate } from "react-router-dom";
-import Transition from "./Transition";
 
 const Hero = ({ onExplore }) => {
   const navigate = useNavigate();

@@ -148,23 +148,39 @@ const AltoSaxo = forwardRef((props, ref) => {
       const model = modelRef.current;
       if (!model) return;
       setIsSpinning(true);
+      
       const startAzimuth = currentRotationRef.current.azimuth;
       const finalAzimuth = startAzimuth + 360;
       const elevation = currentRotationRef.current.elevation;
       const radius = 100;
-      const duration = 1200;
+      const duration = 800;
       const startTime = performance.now();
       const easeInOut = t => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+      
       function animate(time) {
         const elapsed = time - startTime;
         const progress = Math.min(elapsed / duration, 1);
         const eased = easeInOut(progress);
+        
         const currentAzimuth = startAzimuth + (finalAzimuth - startAzimuth) * eased;
+        
+        // Add scale animation that peaks at middle of spin
+        const scaleProgress = Math.sin(progress * Math.PI); // 0 -> 1 -> 0
+        const scale = 1 + scaleProgress * 0.3; // Scale up to 1.3x
+        
+        // Add slight vertical movement
+        const yOffset = Math.sin(progress * Math.PI * 2) * 10; // Bounce effect
+        
         model.setAttribute('camera-orbit', `${currentAzimuth.toFixed(2)}deg ${elevation.toFixed(2)}deg ${radius}m`);
+        model.style.transform = `scale(${scale}) translateY(${yOffset}px)`;
+        // model.style.filter = `brightness(${1 + scaleProgress * 0.2})`; // Slight brightness boost
+        
         if (progress < 1) {
           requestAnimationFrame(animate);
         } else {
           currentRotationRef.current.azimuth = (startAzimuth + 360) % 360;
+          model.style.transform = '';
+          model.style.filter = '';
           setIsSpinning(false);
         }
       }
@@ -189,7 +205,8 @@ const AltoSaxo = forwardRef((props, ref) => {
           height: '74rem',
           position: 'absolute',
           bottom: '-6rem',
-          transform: "rotate(-10deg)"
+          transform: "rotate(-10deg)",
+          transition: "ease all .3s"
         }}
       ></model-viewer>
     </div>

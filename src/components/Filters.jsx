@@ -1,9 +1,12 @@
 import React from 'react';
 import './Filters.css';
+import ReedSubFilter from './ReedSubFilter';
 
-const accessoryFilters = ['All','Reed', 'Grease', 'Straps', 'Opti-Care'];
+const accessoryFilters = ['All','Reed','Straps','Care & Protection'];
 
 const Filters = ({ selectedSaxType, setSelectedSaxType, activeAccessory, setActiveAccessory }) => {
+  const [selectedReedSubFilter, setSelectedReedSubFilter] = React.useState('');
+
   return (
     <section className="filters-container">
       <div className="main-filter">
@@ -32,6 +35,9 @@ const Filters = ({ selectedSaxType, setSelectedSaxType, activeAccessory, setActi
             </li>
           ))}
         </ul>
+        {/* {activeAccessory === 'Reed' && (
+          <ReedSubFilter value={selectedReedSubFilter} onChange={setSelectedReedSubFilter} />
+        )} */}
       </div>
     </section>
   );

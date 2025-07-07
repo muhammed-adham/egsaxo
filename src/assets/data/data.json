@@ -90,7 +90,7 @@
         "https://res.cloudinary.com/dph1b3jla/image/upload/v1751637103/10382690_800_xh4hco.jpg"
       ],
       "Instrument": ["alto"],
-      "category": "opti-care",
+      "category": "care_protection",
       "price": 1500,
       "price_sale": null,
       "quantity":2
@@ -106,7 +106,7 @@
         "https://res.cloudinary.com/dph1b3jla/image/upload/v1751637155/10586538_800_qd6pes.jpg"
       ],
       "Instrument": ["alto", "tenor"],
-      "category": "opti-care",
+      "category": "care_protection",
       "price": 180,
       "price_sale": null,
       "quantity":5
@@ -125,9 +125,9 @@
         "Works well for various music styles"
       ],
       "image": [
-        "https://res.cloudinary.com/dph1b3jla/image/upload/v1751637180/14874775_800_qwrest.jpg",
         "https://res.cloudinary.com/dph1b3jla/image/upload/v1751637179/14874800_800_wipqns.jpg",
         "https://res.cloudinary.com/dph1b3jla/image/upload/v1751637185/14874795_800_d1lsot.jpg",
+        "https://res.cloudinary.com/dph1b3jla/image/upload/v1751637180/14874775_800_qwrest.jpg",
         "https://res.cloudinary.com/dph1b3jla/image/upload/v1751637183/14874785_800_mxki1y.jpg"
       ],
       "Instrument": ["alto"],
@@ -179,7 +179,7 @@
         "https://res.cloudinary.com/dph1b3jla/image/upload/v1751637298/19366724_800_frxyt7.jpg"
       ],
       "Instrument": ["alto"],
-      "category": "opti-care",
+      "category": "care_protection",
       "price": 850,
       "price_sale": null,
       "quantity":3
@@ -202,7 +202,7 @@
         "https://res.cloudinary.com/dph1b3jla/image/upload/v1751637431/13665781_800_og0hqx.jpg"
       ],
       "Instrument": ["alto", "tenor", "soprano"],
-      "category": "grease",
+      "category": "care_protection",
       "price": 600,
       "price_sale": null,
       "quantity":2

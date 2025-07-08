@@ -6,6 +6,7 @@
     border: 2px dashed #dee2e6;
     position: relative;
     overflow: hidden;
+    box-shadow: var(--box-shadow);
   }
   
   .empty-state::before {
@@ -15,7 +16,7 @@
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #8b5cf6, #3b82f6, #06b6d4, #10b981);
+    /* background: linear-gradient(90deg, #8b5cf6, #3b82f6, #06b6d4, #10b981); */
     animation: shimmer 3s ease-in-out infinite;
   }
   
@@ -105,41 +106,9 @@
     justify-content: center;
     flex-wrap: wrap;
     margin-bottom: 2rem;
-  }
-  
-  .primary-btn, .secondary-btn {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1.5rem;
-    border-radius: 12px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
-  }
-  
-  .primary-btn {
-    background: linear-gradient(135deg, #8b5cf6, #3b82f6);
-    color: white;
-  }
-  
-  .primary-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(139, 92, 246, 0.3);
-  }
-  
-  .secondary-btn {
-    background: white;
-    color: #6b7280;
-    border: 2px solid #e5e7eb;
-  }
-  
-  .secondary-btn:hover {
-    border-color: #8b5cf6;
-    color: #8b5cf6;
-    transform: translateY(-2px);
+    margin-inline:auto ;
+    /* padding-inline: var(--spacing-xl); */
+    max-width: 40rem;
   }
   
   .musical-tip {

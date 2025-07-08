@@ -21,6 +21,8 @@ const Shop = () => {
       <ProductList 
         selectedSaxType={selectedSaxType}
         activeAccessory={activeAccessory}
+        setSelectedSaxType={setSelectedSaxType}
+        setActiveAccessory={setActiveAccessory}
       />
     </>
   );

@@ -10,7 +10,8 @@ const Header = () => {
   const navLinks=[
     {label:"Shop", url:'/shop'},
     {label:"About", url:'/about'},
-    {label:"Policy", url:'/policy'}
+    {label:"Policy", url:'/policy'},
+    {label:"Contact", url:'/contact'}
   ]
   return (
     <>

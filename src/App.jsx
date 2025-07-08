@@ -6,6 +6,7 @@ import PolicyPage from "./pages/PolicyPage";
 import CartPage from "./pages/CartPage";
 import HelpCenterPage from "./pages/HelpCenterPage";
 import ProductPage from "./pages/ProductPage";
+import ContactPage from "./pages/ContactPage";
 import {
   CustomerLayout,
   AccountDetails,
@@ -29,6 +30,7 @@ const App = () => {
         { path: "/policy", element: <PolicyPage /> },
         { path: "/cart", element: <CartPage /> },
         { path: "/help-center", element: <HelpCenterPage /> },
+        { path: "/contact", element: <ContactPage /> },
         { path: "/customer", element: <CustomerLayout /> },
         { path: "/account", element: <AccountDetails /> },
         { path: "/orders", element: <Orders /> },

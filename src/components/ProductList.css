@@ -11,7 +11,7 @@
 }  */
 
 .product-list-container {
-  padding: 2rem;
+  padding: var(--spacing-lg);
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -19,7 +19,7 @@
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 2rem;
+  gap: var(--spacing-lg);
 }
 
 .grid-header {
@@ -55,10 +55,11 @@
   gap: 0.5rem;
 }
 
-.product-card-wrapper {
+/* =====Make Cards Prespective not Working=====*/
+/* .product-card-wrapper {
   animation: slideInUp 0.6s ease-out both;
   animation-delay: var(--delay);
-}
+} */
 
 @keyframes slideInUp {
   from {

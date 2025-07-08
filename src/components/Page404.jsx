@@ -1,8 +1,12 @@
 import React from 'react'
 import './Page404.css'
-import { GiSaxophone } from 'react-icons/gi'
+import BtnPrimary from "./BtnPrimary";
+import BtnOutline from "./BtnOutline";
+import { IoIosNotifications } from "react-icons/io";
+import { useNavigate } from 'react-router-dom';
 
-const Page404 = () => {
+const Page404 = ({resetFilters}) => {
+    
     return (
         <div className="empty-state">
             {/* <div className="musical-note">🎵</div> */}
@@ -34,14 +38,8 @@ const Page404 = () => {
             </p>
 
             <div className="action-buttons">
-                <button className="primary-btn">
-                    <span>🎼</span>
-                    Explore All Products
-                </button>
-                <button className="secondary-btn">
-                    <span>🔔</span>
-                    Notify Me When Available
-                </button>
+                <BtnPrimary label={"Explore All Products"} showIcon={false} onClick={resetFilters} />
+                <BtnOutline label={<><IoIosNotifications size={16}/> Notify Me When Available</>} />
             </div>
 
             {/* <div className="musical-tip">

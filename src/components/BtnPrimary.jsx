@@ -1,6 +1,5 @@
 import React from 'react'
 import './BtnPrimary.css'
-import { HiArrowSmRight } from 'react-icons/hi'
 import { GiSaxophone } from 'react-icons/gi'
 
 const BtnPrimary = ({ label, showIcon = true, disabled = false, className = '', onClick }) => {

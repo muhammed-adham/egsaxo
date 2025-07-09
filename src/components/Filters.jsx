@@ -35,9 +35,9 @@ const Filters = ({ selectedSaxType, setSelectedSaxType, activeAccessory, setActi
             </li>
           ))}
         </ul>
-        {/* {activeAccessory === 'Reed' && (
+        {activeAccessory === 'Reed' && (
           <ReedSubFilter value={selectedReedSubFilter} onChange={setSelectedReedSubFilter} />
-        )} */}
+        )}
       </div>
     </section>
   );

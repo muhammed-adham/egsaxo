@@ -34,19 +34,21 @@ const ReedSubFilter = ({ value, onChange }) => {
   return (
     <div className="reed-subfilter">
       <div className="reed-subfilter__header">
-        <h4 className="reed-subfilter__title">Refine Reeds</h4>
+        <h4 className="reed-subfilter__title">Strength
+          
+        </h4>
         {value && (
           <button 
             className="reed-subfilter__clear"
             onClick={clearFilter}
             aria-label="Clear filter"
           >
-            ✕
+            Clear
           </button>
         )}
       </div>
 
-      <div className="reed-subfilter__tabs">
+      {/* <div className="reed-subfilter__tabs">
         <button
           className={`reed-subfilter__tab ${activeTab === 'strength' ? 'active' : ''}`}
           onClick={() => setActiveTab('strength')}
@@ -59,7 +61,7 @@ const ReedSubFilter = ({ value, onChange }) => {
         >
           Accessories
         </button>
-      </div>
+      </div> */}
 
       {activeTab === 'strength' && (
         <div className="reed-subfilter__content">

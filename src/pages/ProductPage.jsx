@@ -5,6 +5,8 @@ import './ProductPage.css';
 import Badge from '../components/Badge';
 import BtnPrimary from '../components/BtnPrimary';
 import BtnOutline from '../components/BtnOutline';
+import { BsStars } from 'react-icons/bs';
+import ModalOverlay from '../components/ModalOverlay';
 
 const ProductPage = () => {
   const { id } = useParams();
@@ -12,6 +14,7 @@ const ProductPage = () => {
   const [selectedImage, setSelectedImage] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
+  const [showRequestModal, setShowRequestModal] = useState(false);
 
   const product = data?.products?.find(p => p.id === id);
 
@@ -212,24 +215,25 @@ const ProductPage = () => {
                   disabled={product.quantity === 0}
                   label={
                     <>
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                         <circle cx="9" cy="21" r="1"></circle>
                         <circle cx="20" cy="21" r="1"></circle>
                         <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
                       </svg>
                       {product.quantity === 0 ? 'Out of Stock' : 'Add to Cart'}
-
                     </>
                   } />
 
                 <BtnPrimary showIcon={false} label={product.quantity === 0 ? 'Out of Stock' : 'Buy Now'} disabled={product.quantity === 0} />
-                {/* <button
-                  onClick={handleBuyNow}
-                  disabled={product.quantity === 0}
-                  className="buy-now-btn"
-                >
-                  {product.quantity === 0 ? 'Out of Stock' : 'Buy Now'}
-                </button> */}
+
+                {/* Request Availability Button (only when out of stock) */}
+                {product.quantity === 0 && (
+                  <BtnPrimary
+                    showIcon={false}
+                    label="Bring it back"
+                    onClick={() => setShowRequestModal(true)}
+                  />
+                )}
               </div>
             </div>
 
@@ -270,7 +274,7 @@ const ProductPage = () => {
                     <div
                       key={relatedProduct.id}
                       className="related-product-card"
-                      onClick={() =>( navigate(`/product/${relatedProduct.id}`),scroll(0,0), setSelectedImage(0))}
+                      onClick={() => (navigate(`/product/${relatedProduct.id}`), scroll(0, 0), setSelectedImage(0))}
                     >
                       <img src={relatedProduct.image[0]} alt={relatedProduct.title} />
                       <h4>{relatedProduct.sub_title}</h4>
@@ -281,6 +285,10 @@ const ProductPage = () => {
             </div>
           )}
       </div>
+      {/* Modal Overlay for Request Availability */}
+      {showRequestModal && (
+        <ModalOverlay title={"Want it back?"} msg={"Let us know, and we’ll bring it back just for you and we'll notify you the moment it's available again."} cta={"Bring it back"} onClose={() => setShowRequestModal(false)} />
+      )}
     </div>
   );
 };

@@ -29,11 +29,12 @@
   }
   
   .reed-subfilter__clear {
-    background: #ef4444;
+    background: var(--color-text);
     border: none;
-    border-radius: 50%;
-    width: 24px;
-    height: 24px;
+    /* border-radius: 50%; */
+    padding: .6rem;
+    /* width: 24px; */
+    /* height: 24px; */
     color: white;
     font-size: 14px;
     cursor: pointer;
@@ -44,7 +45,8 @@
   }
   
   .reed-subfilter__clear:hover {
-    background: #dc2626;
+    background: var(--color-danger);
+
   }
   
   /* Tabs */
@@ -111,22 +113,22 @@
   }
   
   .reed-strength-card:hover {
-    border-color: #3b82f6;
-    background: #f0f9ff;
+    border-color: var(--color-accent);
+    background: var(--color-background);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
   }
   
   .reed-strength-card.selected {
-    border-color: #3b82f6;
-    background: #dbeafe;
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    border-color: var(--color-warning);
+    background: var(--color-background);
+    box-shadow: var(--box-shadow);
   }
   
   .reed-strength-card__strength {
     font-size: 0.875rem;
     font-weight: 600;
-    color: #3b82f6;
+    color: var(--color-primary);
     margin-bottom: 2px;
   }
   

@@ -180,7 +180,7 @@ const AltoSaxo = forwardRef((props, ref) => {
         } else {
           currentRotationRef.current.azimuth = (startAzimuth + 360) % 360;
           model.style.transform = '';
-          model.style.filter = '';
+          model.style.filter = 'brightness(.8) saturate(0) contrast(10) grayscale(100%)';
           setIsSpinning(false);
         }
       }

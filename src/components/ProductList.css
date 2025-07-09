@@ -29,7 +29,7 @@
   align-items: center;
   margin-bottom: 1rem;
   padding: 1rem;
-  background: rgba(139, 92, 246, 0.05);
+  background: var(--color-background-transparent);
   border-radius: 12px;
   border: 1px solid rgba(139, 92, 246, 0.1);
 }
@@ -39,12 +39,12 @@
   align-items: center;
   gap: 0.5rem;
   font-weight: 600;
-  color: #374151;
+  color: var(--color-text-hover);
 }
 
 .note-symbol {
   font-size: 1.2rem;
-  color: #8b5cf6;
+  color: var(--color-text);
 }
 
 .sort-indicator {
@@ -53,6 +53,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  text-transform: capitalize;
 }
 
 /* =====Make Cards Prespective not Working=====*/

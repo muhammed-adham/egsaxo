@@ -13,6 +13,7 @@
   --gradient-accent: linear-gradient(135deg, #DDF23D, #95A612 150%);
   --color-background: #fdfdfd;
   --color-background-transparent: rgba(248, 248, 248, 0.7);
+  --color-background-disabled: #6c757d;
   /* Off-White */
   --color-background-primary: #afafaf;
   /* Off-White */

@@ -4,8 +4,13 @@ import BtnPrimary from "./BtnPrimary";
 import BtnOutline from "./BtnOutline";
 import { IoIosNotifications } from "react-icons/io";
 import { useNavigate } from 'react-router-dom';
+import ModalOverlay from "./ModalOverlay";
 
 const Page404 = ({resetFilters}) => {
+    const [showModal, setShowModal] = React.useState(false);
+    
+    const handleNotifyClick = () => setShowModal(true);
+    const handleCloseModal = () => setShowModal(false);
     
     return (
         <div className="empty-state">
@@ -39,9 +44,16 @@ const Page404 = ({resetFilters}) => {
 
             <div className="action-buttons">
                 <BtnPrimary label={"Explore All Products"} showIcon={false} onClick={resetFilters} />
-                <BtnOutline label={<><IoIosNotifications size={16}/> Notify Me When Available</>} />
+                <BtnOutline label={<><IoIosNotifications size={16}/> Notify When Available</>} onClick={handleNotifyClick} />
             </div>
-
+            {showModal && (
+                <ModalOverlay
+                    onClose={handleCloseModal}
+                    title="Get Notified!"
+                    msg="Be the first to know when new items are added to this category."
+                    cta="Notify me"
+                />
+            )}
             {/* <div className="musical-tip">
       <div className="tip-icon">💡</div>
       <p><strong>Pro Tip:</strong> Try adjusting your filters or browse by category to discover gear that'll make your sax sing!</p>

@@ -18,14 +18,14 @@
   justify-content: center;
   flex-grow: 1;
   gap: .2rem;
-  /* width: 100%; */
+  min-width: 16rem;
 }
 
 .cta__primary:hover {
   color: var(--color-text);
   background: var(--gradient-accent);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, .3);
-  transform: translateY(-2px)!important;
+  transform: translateY(-2px);
 }
 
 /* Saxophone icon animation on hover */
@@ -59,7 +59,7 @@
 .cta__primary:disabled{
   opacity: 0.5;
   cursor: not-allowed;
-  background: #6c757d;
+  background: var(--color-background-disabled);
   color: var(--color-text-light);
   transform: none;
   box-shadow: none;
@@ -68,4 +68,10 @@
 .cta__primary:disabled svg {
   transform: none;
   animation: none;
+}
+
+
+/*=====Modal Overlay=====*/
+.request-btn-wide{
+  margin: auto;
 }

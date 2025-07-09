@@ -100,7 +100,7 @@
     text-transform: capitalize;
   }
   
-  .action-buttons {
+  .empty-state .action-buttons {
     display: flex;
     gap: 1rem;
     justify-content: center;

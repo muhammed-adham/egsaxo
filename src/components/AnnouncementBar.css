@@ -3,6 +3,9 @@
   color: var(--color-text);
   text-align: center;
   padding: var(--spacing-sm) var(--spacing-lg);
+  bottom: 0;
+  position: absolute;
+  width: 100%;
 }
 
 .announcement-bar p {

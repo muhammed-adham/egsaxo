@@ -59,12 +59,12 @@
 
 .user-dropdown__menu li a:hover,
 .user-dropdown__menu li button:hover {
-  background-color: var(--color-accent);
-  color: var(--color-text);
+  background-color: var(--color-secondary);
+  color: var(--color-text-light);
 }
 
 .user-dropdown__logout {
-  color: #c0392b !important;
+  /* color: #c0392b !important; */
   /* A reddish color for logout */
   font-weight: 600;
 }

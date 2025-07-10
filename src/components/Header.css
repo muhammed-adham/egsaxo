@@ -1,8 +1,8 @@
 .site-header {
   background-color: transparent;
   padding: var(--spacing-md) 0;
-  border-bottom: 1px solid var(--color-border);
-  box-shadow: var(--box-shadow);
+  /* border-bottom: 1px solid var(--color-border); */
+  /* box-shadow: var(--box-shadow); */
   /* position: absolute; */
   width: 100vw;
 }

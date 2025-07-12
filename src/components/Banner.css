@@ -10,6 +10,20 @@
     /* align-items: center; */
 }
 
+.banner__container-slogan{
+    position: absolute;
+    top: 0%;
+    left: 5%;
+    font-size: 6rem;
+    z-index: 1;
+    background: var(--gradient-accent);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, .1);
+}
+
 .banner__background-img {
     position: absolute;
     left: 50%;
@@ -24,10 +38,11 @@
 
 .banner__container-img{
     position: absolute;
-    left: 0rem;
-    height: 100%;
+    right: -10%;
+    top: -38%;
+    height: 72rem;
     z-index: 1;
-    transform: scaleX(-1);
+    transform: translateX(-50%) scaleX(-1);
 }
 
 .banner__container-img img{
@@ -43,18 +58,19 @@
     border-radius: 2rem;
     overflow: hidden;
     position: relative;
-    background: rgba(255,255,255,0.2);
+    /* background: rgba(255,255,255,0.2); */
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
-    box-shadow: var(--box-shadow);
+    /* box-shadow: var(--box-shadow); */
 }
 
 .banner__container-title{
     position: absolute;
-    width: 16rem;
+    width: 24rem;
     height: 4rem;
-    left: 20%;
-    border-radius: 0px 0px 1rem 1rem;
+    left: 0%;
+    bottom: 50%;
+    border-radius: 0 1rem 1rem 0;
     background: var(--color-background);
     display: flex;
     justify-content: center;
@@ -85,7 +101,7 @@
 .banner__container-pragraph{
     width: 36%;
     position: absolute;
-    right: 0;
+    left: 0;
     top: 50%;
     padding: 1rem;
     color: var(--color-text-light);
@@ -106,12 +122,25 @@
     width: 32rem;
     height: 32rem;
     border-radius: 50%;
-    background-color: #f4f4f4;
-    /* background-color: red; */
+    /* background-color: #f4f4f4; */
+    background-image: url('./coltrane.webp');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 1rem -2rem;
     bottom: 0;
     left: 50%;
-    transform: translate(-50%,30%);
+    transform: translate(-50%,30%) rotate(0deg);
     outline: var(--color-accent) solid 4px;
     border: 2rem var(--color-background) solid;
     /* box-shadow: inset 0px 0px 12px rgba(0, 0, 0, 0.1); */
+    /* animation: spinner linear 180s infinite ; */
+}
+
+@keyframes spinner {
+    0%{
+        transform: translate(-50%,30%) rotate(0deg);
+    }
+    100%{
+        transform: translate(-50%,30%) rotate(360deg);
+    }
 }

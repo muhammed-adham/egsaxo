@@ -4,11 +4,13 @@
   --font-secondary: 'Cinzel Decorative', serif;
 
   /* Colors */
-  --color-primary: #000;
+  --color-primary: #2c2c2c;
+  --color-primary: #202124;
   /* Deep Charcoal/Almost Black */
   --color-secondary: #95A612;
   --color-secondary: #2e9a89;
   --color-secondary: #74188d;
+  /* --color-secondary: #38188c; */
   /* --color-secondary: #764ba2 ; */
   /* Dark Gray */
   --color-accent: #6bd1be;
@@ -21,11 +23,18 @@
   --color-accent: #4ecdc4 ;
   --color-accent: #DDF23D;
   --color-accent: #2ffcee;
-  --color-accent: #45b7d1 ;
+  --color-accent: #8D5F18;
+  --color-accent: #FF6F61;
+  --color-accent: #F2B134;
+  --color-accent: #F28CB1;
+  --color-accent: #4FD6B0;
+  --color-accent: #D4F655;
+  --color-accent: #45b7d1;
+  --color-accent: #F3E2B3;
   
   /* Old Gold */
   --gradient-accent: linear-gradient(135deg, #6bd1be, #95A612 150%);
-  --gradient-accent: linear-gradient(135deg, #2ffcee, #74188d 150%);
+  --gradient-accent: linear-gradient(135deg, #F3E2B3, #74188d 150%);
   --color-background: #fdfdfd;
   --color-background-transparent: rgba(248, 248, 248, 0.7);
   --color-background-disabled: #6c757d;

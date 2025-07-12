@@ -20,17 +20,20 @@
 }
 
 .wave-1 {
-  fill: rgba(0, 0, 0, 1);
+  fill: #2c2c2c;
+  fill: #202124;
   animation-delay: 0s;
 }
 
 .wave-2 {
-  fill: rgba(0, 0, 0, 0.2);
+  fill: rgba(44, 44, 44, 0.2);
+  fill: rgba(32, 33, 36, 0.2);
   animation-delay: -2s;
 }
 
 .wave-3 {
-  fill: rgba(0, 0, 0, 0.3);
+  fill: rgba(44, 44, 44, 0.3);
+  fill: rgba(32, 33, 36, 0.3);
   animation-delay: -4s;
 }
 

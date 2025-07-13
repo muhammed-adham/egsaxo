@@ -4,6 +4,7 @@ import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import PolicyPage from "./pages/PolicyPage";
 import CartPage from "./pages/CartPage";
+import CheckoutPage from "./pages/CheckoutPage";
 import HelpCenterPage from "./pages/HelpCenterPage";
 import ProductPage from "./pages/ProductPage";
 import ContactPage from "./pages/ContactPage";
@@ -29,6 +30,7 @@ const App = () => {
         { path: "/about", element: <AboutPage /> },
         { path: "/policy", element: <PolicyPage /> },
         { path: "/cart", element: <CartPage /> },
+        { path: "/checkout", element: <CheckoutPage /> },
         { path: "/help-center", element: <HelpCenterPage /> },
         { path: "/contact", element: <ContactPage /> },
         { path: "/customer", element: <CustomerLayout /> },

@@ -287,7 +287,7 @@ const ProductPage = () => {
       </div>
       {/* Modal Overlay for Request Availability */}
       {showRequestModal && (
-        <ModalOverlay title={"Want it back?"} msg={"Let us know, and we’ll bring it back just for you and we'll notify you the moment it's available again."} cta={"Bring it back"} onClose={() => setShowRequestModal(false)} />
+        <ModalOverlay title={"Want it back?"} msg={"Let us know, and we’ll bring it back just for you and will notify you the moment it's available again."} cta={"Bring it back"} onClose={() => setShowRequestModal(false)} />
       )}
     </div>
   );

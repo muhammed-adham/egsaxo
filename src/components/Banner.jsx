@@ -40,6 +40,9 @@ const Banner = () => {
         <div className="banner__container-img">
           <img src="/saxo-2.png" alt="" />
         </div>
+        <div className="banner__container-img-2">
+          <img src="/TC.jpeg" alt="" />
+        </div>
         <div className="banner__container-content">
           <div className="banner__container-title">
             {" "}

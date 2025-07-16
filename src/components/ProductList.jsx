@@ -44,7 +44,7 @@ const ProductList = ({ selectedSaxType, activeAccessory, setSelectedSaxType, set
           <div className="grid-header">
             <div className="results-count">
               <span className="note-symbol">{filteredProducts.length}</span>
-              <span> Gear{filteredProducts.length !== 1 ? 's' : ''} found</span>
+              <span> Item{filteredProducts.length !== 1 ? 's' : ''} found</span>
             </div>
             <div className="sort-indicator">
               <span>All items are premium grade</span>

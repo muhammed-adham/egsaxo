@@ -34,6 +34,7 @@
   
   /* Old Gold */
   --gradient-accent: linear-gradient(135deg, #6bd1be, #95A612 150%);
+  --gradient-accent: linear-gradient(135deg, #F3E2B3, #2e9a89 150%);
   --gradient-accent: linear-gradient(135deg, #F3E2B3, #74188d 150%);
   --color-background: #fdfdfd;
   --color-background-transparent: rgba(248, 248, 248, 0.7);

@@ -15,9 +15,22 @@ const CheckoutPage = () => {
   const [isAddressValid, setIsAddressValid] = useState(false);
   const [isSummaryConfirmed, setIsSummaryConfirmed] = useState(false);
   const [direction, setDirection] = useState('forward'); // 'forward' or 'backward'
+  const [address, setAddress] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    address: '',
+    city: '',
+    district: '',
+    postalCode: '',
+    country: 'Egypt',
+    notes: ''
+  });
 
   // Handlers for navigation
   const handleNext = () => {
+    window.scroll(0,0)
     setDirection('forward');
     if (step === 0 && isAddressValid) {
       setStep(1);
@@ -25,8 +38,9 @@ const CheckoutPage = () => {
       setStep(2);
     }
   };
-
+  
   const handlePrev = () => {
+    window.scroll(0,0)
     setDirection('backward');
     if (step > 0) {
       setStep(step - 1);
@@ -37,7 +51,11 @@ const CheckoutPage = () => {
   let stepContent;
   if (step === 0) {
     stepContent = (
-      <OrderAdress onValidChange={setIsAddressValid} />
+      <OrderAdress 
+        value={address}
+        onChange={setAddress}
+        onValidChange={setIsAddressValid} 
+      />
     );
   } else if (step === 1) {
     stepContent = (

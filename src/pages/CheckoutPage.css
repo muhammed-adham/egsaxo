@@ -1,6 +1,6 @@
 .checkout-page {
   min-height: 100vh;
-  background: linear-gradient(135deg, var(--color-background) 0%, #f8f9fa 100%);
+  background: var(--color-background-gradient);
   padding: var(--spacing-lg) 0;
 }
 
@@ -109,12 +109,24 @@
   color: var(--color-text-hover);
 }
 
-.checkout__nav svg{
-  cursor: pointer;
+.checkout__nav button{
+background: transparent;
+border: none;
+font-size: 4rem;
+cursor: pointer;
+transition: all ease .4s;
 }
 
-.checkout__nav svg:hover{
+
+.checkout__nav button:hover{
   color: var(--color-secondary);
+}
+
+.checkout__nav button:disabled{
+  /* visibility: hidden; */
+  opacity: .2;
+  color: var(--color-text-hover);
+  cursor: no-drop;
 }
 
 /* Sliding animation for checkout steps */

@@ -4,7 +4,7 @@ import { HiMiniCreditCard } from 'react-icons/hi2';
 import { SiCashapp } from 'react-icons/si';
 import './OrderAddress.css'
 
-const OrderAdress = ({ onValidChange }) => {
+const OrderAdress = ({ value, onChange, onValidChange }) => {
     // Districts mapping for Egyptian cities
     const cityDistricts = {
         "Cairo": [
@@ -106,40 +106,35 @@ const OrderAdress = ({ onValidChange }) => {
         "Auseem": "12556", "Mit Rahina": "12556"
     };
 
-
-    // Add district to formData
-    const [formData, setFormData] = useState({
-        firstName: '',
-        lastName: '',
-        email: '',
-        phone: '',
-        address: '',
-        city: '',
-        district: '',
-        postalCode: '',
-        country: 'Egypt',
-        notes: ''
-    });
+    // Remove local formData, use value from props
 
     // Add availableDistricts state
     const [availableDistricts, setAvailableDistricts] = useState([]);
+
+    // Sync availableDistricts with value.city
+    useEffect(() => {
+        if (value.city) {
+            setAvailableDistricts(cityDistricts[value.city] || []);
+        } else {
+            setAvailableDistricts([]);
+        }
+    }, [value.city]);
 
     const [errors, setErrors] = useState({});
     const [isSubmitting, setIsSubmitting] = useState(false);
 
     // Refactored handleInputChange
     const handleInputChange = (e) => {
-        const { name, value } = e.target;
+        const { name, value: inputValue } = e.target;
 
         if (name === "city") {
-            setAvailableDistricts(cityDistricts[value] || []);
-            setFormData(prev => ({
-                ...prev,
-                city: value,
+            setAvailableDistricts(cityDistricts[inputValue] || []);
+            onChange({
+                ...value,
+                city: inputValue,
                 district: '',
                 postalCode: ''
-            }));
-            // Clear city, district, and postalCode errors if any
+            });
             setErrors(prev => ({
                 ...prev,
                 city: '',
@@ -150,12 +145,11 @@ const OrderAdress = ({ onValidChange }) => {
         }
 
         if (name === "district") {
-            setFormData(prev => ({
-                ...prev,
-                district: value,
-                postalCode: districtPostalCodes[value] || ''
-            }));
-            // Clear district and postalCode errors if any
+            onChange({
+                ...value,
+                district: inputValue,
+                postalCode: districtPostalCodes[inputValue] || ''
+            });
             setErrors(prev => ({
                 ...prev,
                 district: '',
@@ -164,12 +158,11 @@ const OrderAdress = ({ onValidChange }) => {
             return;
         }
 
-        setFormData(prev => ({
-            ...prev,
-            [name]: value
-        }));
+        onChange({
+            ...value,
+            [name]: inputValue
+        });
 
-        // Clear error when user starts typing
         if (errors[name]) {
             setErrors(prev => ({
                 ...prev,
@@ -181,19 +174,19 @@ const OrderAdress = ({ onValidChange }) => {
     const validateForm = () => {
         const newErrors = {};
 
-        if (!formData.firstName.trim()) newErrors.firstName = 'First name is required';
-        if (!formData.lastName.trim()) newErrors.lastName = 'Last name is required';
-        if (!formData.email.trim()) {
+        if (!value.firstName.trim()) newErrors.firstName = 'First name is required';
+        if (!value.lastName.trim()) newErrors.lastName = 'Last name is required';
+        if (!value.email.trim()) {
             newErrors.email = 'Email is required';
-        } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+        } else if (!/\S+@\S+\.\S+/.test(value.email)) {
             newErrors.email = 'Email is invalid';
         }
-        if (!formData.phone.trim()) newErrors.phone = 'Phone number is required';
-        if (!formData.address.trim()) newErrors.address = 'Address is required';
-        if (!formData.city.trim()) newErrors.city = 'City is required';
-        if (!formData.district.trim()) newErrors.district = 'District is required';
-        if (!formData.postalCode.trim()) newErrors.postalCode = 'Postal code is required';
-        if (!formData.country.trim()) newErrors.country = 'Country is required';
+        if (!value.phone.trim()) newErrors.phone = 'Phone number is required';
+        if (!value.address.trim()) newErrors.address = 'Address is required';
+        if (!value.city.trim()) newErrors.city = 'City is required';
+        if (!value.district.trim()) newErrors.district = 'District is required';
+        if (!value.postalCode.trim()) newErrors.postalCode = 'Postal code is required';
+        if (!value.country.trim()) newErrors.country = 'Country is required';
 
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
@@ -226,7 +219,7 @@ const OrderAdress = ({ onValidChange }) => {
             onValidChange(validateForm());
         }
         // eslint-disable-next-line
-    }, [formData]);
+    }, [value]);
 
     return (
         <>
@@ -244,7 +237,7 @@ const OrderAdress = ({ onValidChange }) => {
                                         type="text"
                                         id="firstName"
                                         name="firstName"
-                                        value={formData.firstName}
+                                        value={value.firstName}
                                         onChange={handleInputChange}
                                         className={errors.firstName ? 'error' : ''}
                                     />
@@ -256,7 +249,7 @@ const OrderAdress = ({ onValidChange }) => {
                                         type="text"
                                         id="lastName"
                                         name="lastName"
-                                        value={formData.lastName}
+                                        value={value.lastName}
                                         onChange={handleInputChange}
                                         className={errors.lastName ? 'error' : ''}
                                     />
@@ -271,7 +264,7 @@ const OrderAdress = ({ onValidChange }) => {
                                         type="email"
                                         id="email"
                                         name="email"
-                                        value={formData.email}
+                                        value={value.email}
                                         onChange={handleInputChange}
                                         className={errors.email ? 'error' : ''}
                                     />
@@ -283,7 +276,7 @@ const OrderAdress = ({ onValidChange }) => {
                                         type="tel"
                                         id="phone"
                                         name="phone"
-                                        value={formData.phone}
+                                        value={value.phone}
                                         onChange={handleInputChange}
                                         className={errors.phone ? 'error' : ''}
                                     />
@@ -297,7 +290,7 @@ const OrderAdress = ({ onValidChange }) => {
                                     type="text"
                                     id="address"
                                     name="address"
-                                    value={formData.address}
+                                    value={value.address}
                                     onChange={handleInputChange}
                                     className={errors.address ? 'error' : ''}
                                 />
@@ -310,7 +303,7 @@ const OrderAdress = ({ onValidChange }) => {
                                     <select
                                         id="city"
                                         name="city"
-                                        value={formData.city}
+                                        value={value.city}
                                         onChange={handleInputChange}
                                         className={errors.city ? 'error' : ''}
                                     >
@@ -364,13 +357,13 @@ const OrderAdress = ({ onValidChange }) => {
                                     <select
                                         id="district"
                                         name="district"
-                                        value={formData.district}
+                                        value={value.district}
                                         onChange={handleInputChange}
                                         required
-                                        disabled={!formData.city || availableDistricts.length === 0}
+                                        disabled={!value.city || availableDistricts.length === 0}
                                         className={errors.district ? 'error' : ''}
                                     >
-                                        <option value="">{formData.city ? 'Select District' : 'Select city first'}</option>
+                                        <option value="">{value.city ? 'Select District' : 'Select city first'}</option>
                                         {availableDistricts.map((district) => (
                                             <option key={district} value={district}>{district}</option>
                                         ))}
@@ -384,7 +377,7 @@ const OrderAdress = ({ onValidChange }) => {
                                     type="text"
                                     id="postalCode"
                                     name="postalCode"
-                                    value={formData.postalCode}
+                                    value={value.postalCode}
                                     onChange={handleInputChange}
                                     className={errors.postalCode ? 'error' : ''}
                                 />
@@ -396,7 +389,7 @@ const OrderAdress = ({ onValidChange }) => {
                                 <select
                                     id="country"
                                     name="country"
-                                    value={formData.country}
+                                    value={value.country}
                                     onChange={handleInputChange}
                                     className={errors.country ? 'error' : ''}
                                     disabled
@@ -411,7 +404,7 @@ const OrderAdress = ({ onValidChange }) => {
                                 <textarea
                                     id="notes"
                                     name="notes"
-                                    value={formData.notes}
+                                    value={value.notes}
                                     onChange={handleInputChange}
                                     rows="3"
                                     placeholder="Special instructions for delivery..."
@@ -484,9 +477,9 @@ const OrderAdress = ({ onValidChange }) => {
                                             </div>
                                         </label>
                                     </div>
-                                    <div className="payment-enabled-message">
+                                    {/* <div className="payment-enabled-message">
                                         <span>✓ Available</span>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                         </div>

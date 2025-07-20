@@ -5,7 +5,6 @@
   }
   
   .order-summary {
-    background: white;
     border-radius: var(--border-radius-md);
     padding: var(--spacing-xl);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -109,6 +108,9 @@
   .delivery-info {
     padding-top: var(--spacing-lg);
     border-top: 2px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   
   .delivery-info h3 {
@@ -120,14 +122,15 @@
   
   .delivery-details {
     display: flex;
-    flex-direction: column;
-    gap: var(--spacing-md);
+    gap: var(--spacing-xl);
+    justify-content: flex-start;
   }
   
   .delivery-item {
     display: flex;
     align-items: center;
     gap: var(--spacing-md);
+    padding-bottom: var(--spacing-lg);
   }
   
   .delivery-icon {
@@ -151,4 +154,13 @@
     color: var(--color-text-hover);
     font-size: 0.85rem;
     margin: 0;
+  }
+
+  .order-summary-confirm{
+    display: flex;
+    justify-content: center;
+    padding-top: var(--spacing-lg);
+    padding-inline: .6rem;
+    border-top: 2px solid var(--color-border);
+    text-transform: capitalize;
   }

@@ -85,11 +85,13 @@
     padding: var(--spacing-lg);
     transition: all 0.3s ease;
     position: relative;
+    display: flex;
+    justify-content: space-between;
   }
   
   .payment-method.active {
     border-color: var(--color-secondary);
-    background: rgba(116, 24, 141, 0.05);
+    /* background: rgba(116, 24, 141, 0.05); */
   }
   
   .payment-method.disabled {

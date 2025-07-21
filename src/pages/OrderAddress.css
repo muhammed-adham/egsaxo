@@ -62,11 +62,11 @@
   .form-group input.error,
   .form-group select.error,
   .form-group textarea.error {
-    border-color: var(--color-danger);
+    border-color: var(--color-secondary);
   }
   
   .error-message {
-    color: var(--color-danger);
+    color: var(--color-secondary);
     font-size: 0.85rem;
     margin-top: var(--spacing-xs);
     display: block;

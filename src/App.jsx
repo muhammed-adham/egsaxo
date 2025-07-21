@@ -17,6 +17,7 @@ import {
   Vouchers,
 } from "./pages/customer";
 import Shop from "./pages/Shop";
+import FullPolicyPage from "./pages/FullPolicyPage";
 
 const App = () => {
   const Router = createBrowserRouter([
@@ -29,6 +30,7 @@ const App = () => {
         { path: '/product/:id', element: <ProductPage /> },
         { path: "/about", element: <AboutPage /> },
         { path: "/policy", element: <PolicyPage /> },
+        { path: "/privacy-policy", element: <FullPolicyPage /> },
         { path: "/cart", element: <CartPage /> },
         { path: "/checkout", element: <CheckoutPage /> },
         { path: "/help-center", element: <HelpCenterPage /> },

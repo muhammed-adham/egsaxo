@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { FaTruckLoading } from 'react-icons/fa';
 import { SiCashapp } from 'react-icons/si';
 import './OrderSummary.css'
+import BtnOrder from '../components/BtnOrder';
 
-const OrderSummary = ({ onConfirmChange }) => {
+const OrderSummary = ({ onConfirmChange, placeOrder }) => {
     // Mock cart data - in real app this would come from context/state
     const cartItems = [
         {
@@ -26,14 +27,7 @@ const OrderSummary = ({ onConfirmChange }) => {
     const shipping = 50.00;
     const total = subtotal + shipping;
 
-    // Confirmation state
-    const [isConfirmed, setIsConfirmed] = useState(false);
 
-    useEffect(() => {
-      if (onConfirmChange) {
-        onConfirmChange(isConfirmed);
-      }
-    }, [isConfirmed, onConfirmChange]);
 
     return (
         <>
@@ -95,14 +89,7 @@ const OrderSummary = ({ onConfirmChange }) => {
                         </div>
                     </div>
                     <div className="order-summary-confirm">
-                      <label>
-                        <input
-                          type="checkbox"
-                          checked={isConfirmed}
-                          onChange={e => setIsConfirmed(e.target.checked)}
-                        />
-                        {' '}I confirm my order summary is correct.
-                      </label>
+                        <BtnOrder onConfirmChange={onConfirmChange} placeOrder={placeOrder} />
                     </div>
                 </div>
             </div>

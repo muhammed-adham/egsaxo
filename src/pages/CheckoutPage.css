@@ -107,6 +107,7 @@
   display: flex;
   justify-content: space-between;
   color: var(--color-text-hover);
+  pointer-events: none;
 }
 
 .checkout__nav button{
@@ -115,6 +116,7 @@ border: none;
 font-size: 4rem;
 cursor: pointer;
 transition: all ease .4s;
+pointer-events: auto;
 }
 
 

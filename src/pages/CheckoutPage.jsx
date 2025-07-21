@@ -59,7 +59,7 @@ const CheckoutPage = () => {
     );
   } else if (step === 1) {
     stepContent = (
-      <OrderSummary onConfirmChange={setIsSummaryConfirmed} />
+      <OrderSummary placeOrder={handleNext} onConfirmChange={setIsSummaryConfirmed} />
     );
   } else if (step === 2) {
     stepContent = <OrderConfirm />;
@@ -102,7 +102,7 @@ const CheckoutPage = () => {
         <button onClick={handlePrev} disabled={step === 0} className="checkout-nav-btn">
           <MdSkipPrevious />
         </button>
-        {step < 2 && (
+        {step < 1 && (
           <button
             onClick={handleNext}
             disabled={

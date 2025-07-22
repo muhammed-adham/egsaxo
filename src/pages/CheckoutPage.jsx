@@ -99,7 +99,7 @@ const CheckoutPage = () => {
         </div>
       </div>
       <div className="checkout__nav">
-        <button onClick={handlePrev} disabled={step === 0} className="checkout-nav-btn">
+        <button style={{ display: step > 1 ? 'none' : 'block' }}onClick={handlePrev} disabled={step === 0} className="checkout-nav-btn">
           <MdSkipPrevious />
         </button>
         {step < 1 && (

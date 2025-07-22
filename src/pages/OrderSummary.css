@@ -8,6 +8,7 @@
     border-radius: var(--border-radius-md);
     padding: var(--spacing-xl);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--box-shadow);
   }
   
   .order-summary h2 {
@@ -158,9 +159,16 @@
 
   .order-summary-confirm{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
     padding-top: var(--spacing-lg);
-    padding-inline: .6rem;
     border-top: 2px solid var(--color-border);
     text-transform: capitalize;
+  }
+
+  .order-summary-confirm .order-action{
+    display: flex;
+    width: 100%;
   }

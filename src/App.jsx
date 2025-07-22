@@ -18,6 +18,7 @@ import {
 } from "./pages/customer";
 import Shop from "./pages/Shop";
 import FullPolicyPage from "./pages/FullPolicyPage";
+import { Toaster } from "react-hot-toast";
 
 const App = () => {
   const Router = createBrowserRouter([
@@ -47,6 +48,7 @@ const App = () => {
 
   return (
     <>
+      <Toaster />
       <RouterProvider router={Router} />
     </>
   );

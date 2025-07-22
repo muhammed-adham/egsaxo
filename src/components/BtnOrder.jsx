@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './BtnOrder.css'
 import BtnPrimary from './BtnPrimary';
 import { Link } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 const BtnOrder = ({ onConfirmChange, placeOrder }) => {
     // Confirmation state
@@ -41,15 +42,15 @@ const BtnOrder = ({ onConfirmChange, placeOrder }) => {
                         `Place Order - $${total.toFixed(2)}`
                     )}
                 </button> */}
-                <BtnPrimary onClick={placeOrder} disabled={!isConfirmed} showIcon={false} label={`Place order - EGP${total}`} />
+                    <BtnPrimary onClick={placeOrder} disabled={!isConfirmed} showIcon={false} label={`Place order - EGP${total}`} />
                 <p className="order-note">
                     By placing your order, you agree to our
-                    <Link>
+                    <Link onClick={() => scroll(0, 0)}>
                         {" "}Terms of Service{" "}
                     </Link>
                     and
-                    <Link to={'/policy'}>
-                    {" "}Privacy Policy.
+                    <Link onClick={() => scroll(0, 0)} to={'/policy'}>
+                        {" "}Privacy Policy.
                     </Link>
                 </p>
             </div>

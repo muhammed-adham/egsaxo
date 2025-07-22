@@ -4,7 +4,7 @@
   height: 120px;
   overflow: hidden;
   z-index: -1;
-  background: var(--color-background-gradient);
+  background: var(--color-background);
   /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
 }
 

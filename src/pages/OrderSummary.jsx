@@ -3,8 +3,21 @@ import { FaTruckLoading } from 'react-icons/fa';
 import { SiCashapp } from 'react-icons/si';
 import './OrderSummary.css'
 import BtnOrder from '../components/BtnOrder';
+import BtnPrimary from '../components/BtnPrimary';
+import { Link } from 'react-router-dom';
 
 const OrderSummary = ({ onConfirmChange, placeOrder }) => {
+    // Confirmation state
+    const [isConfirmed, setIsConfirmed] = useState(false);
+
+    useEffect(() => {
+        if (onConfirmChange) {
+            onConfirmChange(isConfirmed);
+        }
+    }, [isConfirmed, onConfirmChange]);
+
+    const isSubmitting = false
+    // const total = 1000
     // Mock cart data - in real app this would come from context/state
     const cartItems = [
         {
@@ -89,7 +102,27 @@ const OrderSummary = ({ onConfirmChange, placeOrder }) => {
                         </div>
                     </div>
                     <div className="order-summary-confirm">
-                        <BtnOrder onConfirmChange={onConfirmChange} placeOrder={placeOrder} />
+                        <label>
+                            <input
+                                type="checkbox"
+                                checked={isConfirmed}
+                                onChange={e => setIsConfirmed(e.target.checked)}
+                            />
+                            {' '}I confirm my order summary is correct.
+                        </label>
+                        <div className="order-action">
+                            <BtnPrimary onClick={placeOrder} disabled={!isConfirmed} onConfirmChange={onConfirmChange} placeOrder={placeOrder} showIcon={false} label={`Place order - EGP${total}`} />
+                        </div>
+                        <p className="order-note">
+                            By placing your order, you agree to our
+                            <Link onClick={() => scroll(0, 0)}>
+                                {" "}Terms of Service{" "}
+                            </Link>
+                            and
+                            <Link onClick={() => scroll(0, 0)} to={'/policy'}>
+                                {" "}Privacy Policy.
+                            </Link>
+                        </p>
                     </div>
                 </div>
             </div>

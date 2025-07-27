@@ -5,7 +5,7 @@
 }
 
 .checkout-container {
-  max-width: 1200px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 0 var(--spacing-lg);
 }
@@ -125,7 +125,6 @@ pointer-events: auto;
 }
 
 .checkout__nav button:disabled{
-  /* visibility: hidden; */
   opacity: .2;
   color: var(--color-text-hover);
   cursor: no-drop;
@@ -137,6 +136,10 @@ pointer-events: auto;
   min-height: 400px;
   /* Adjust as needed for your content */
   /* overflow-Y: hidden; */
+}
+
+.checkout__nav .invisible{
+  visibility: hidden;
 }
 
 .checkout-step-animate > * {

@@ -1,47 +1,47 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import './CheckoutPage.css';
-import { HiMiniCreditCard } from 'react-icons/hi2';
-import { FaApple } from 'react-icons/fa';
-import { SiCashapp } from 'react-icons/si';
-import OrderAdress from './OrderAddress';
-import OrderSummary from './OrderSummary';
-import { MdSkipNext, MdSkipPrevious } from 'react-icons/md';
-import OrderConfirm from './OrderConfirm';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import "./CheckoutPage.css";
+import { HiMiniCreditCard } from "react-icons/hi2";
+import { FaApple } from "react-icons/fa";
+import { SiCashapp } from "react-icons/si";
+import OrderAdress from "./OrderAddress";
+import OrderSummary from "./OrderSummary";
+import { MdSkipNext, MdSkipPrevious } from "react-icons/md";
+import OrderConfirm from "./OrderConfirm";
 
 const CheckoutPage = () => {
   // Step: 0 = Address, 1 = Summary, 2 = Confirm
   const [step, setStep] = useState(0);
   const [isAddressValid, setIsAddressValid] = useState(false);
   const [isSummaryConfirmed, setIsSummaryConfirmed] = useState(false);
-  const [direction, setDirection] = useState('forward'); // 'forward' or 'backward'
+  const [direction, setDirection] = useState("forward"); // 'forward' or 'backward'
   const [address, setAddress] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    address: '',
-    city: '',
-    district: '',
-    postalCode: '',
-    country: 'Egypt',
-    notes: ''
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    address: "",
+    city: "",
+    district: "",
+    postalCode: "",
+    country: "Egypt",
+    notes: "",
   });
 
   // Handlers for navigation
   const handleNext = () => {
-    window.scroll(0,0)
-    setDirection('forward');
+    window.scroll(0, 0);
+    setDirection("forward");
     if (step === 0 && isAddressValid) {
       setStep(1);
     } else if (step === 1 && isSummaryConfirmed) {
       setStep(2);
     }
   };
-  
+
   const handlePrev = () => {
-    window.scroll(0,0)
-    setDirection('backward');
+    window.scroll(0, 0);
+    setDirection("backward");
     if (step > 0) {
       setStep(step - 1);
     }
@@ -51,15 +51,18 @@ const CheckoutPage = () => {
   let stepContent;
   if (step === 0) {
     stepContent = (
-      <OrderAdress 
+      <OrderAdress
         value={address}
         onChange={setAddress}
-        onValidChange={setIsAddressValid} 
+        onValidChange={setIsAddressValid}
       />
     );
   } else if (step === 1) {
     stepContent = (
-      <OrderSummary placeOrder={handleNext} onConfirmChange={setIsSummaryConfirmed} />
+      <OrderSummary
+        placeOrder={handleNext}
+        onConfirmChange={setIsSummaryConfirmed}
+      />
     );
   } else if (step === 2) {
     stepContent = <OrderConfirm />;
@@ -78,28 +81,32 @@ const CheckoutPage = () => {
           </Link>
           <h1>Checkout</h1>
           <div className="checkout-steps">
-            <div className={`step${step === 0 ? ' active' : ''}`}>
+            <div className={`step${step === 0 ? " active" : ""}`}>
               <span className="step-number">1</span>
               <span className="step-label">Delivery Address</span>
             </div>
             <div className="step-line"></div>
-            <div className={`step${step === 1 ? ' active' : ''}`}>
+            <div className={`step${step === 1 ? " active" : ""}`}>
               <span className="step-number">2</span>
               <span className="step-label">Order Summary</span>
             </div>
             <div className="step-line"></div>
-            <div className={`step${step === 2 ? ' active' : ''}`}>
+            <div className={`step${step === 2 ? " active" : ""}`}>
               <span className="step-number">3</span>
               <span className="step-label">Place Order</span>
             </div>
           </div>
         </div>
-        <div className={animationClass}>
-          {stepContent}
-        </div>
+        <div className={animationClass}>{stepContent}</div>
       </div>
       <div className="checkout__nav">
-        <button style={{ display: step > 1 ? 'none' : 'block' }}onClick={handlePrev} disabled={step === 0} className="checkout-nav-btn">
+        <button
+          onClick={handlePrev}
+          disabled={step === 0}
+          className={`${
+            step === 0 ? "invisible" : step > 1 ? "invisible" : null
+          } checkout-nav-btn`}
+        >
           <MdSkipPrevious />
         </button>
         {step < 1 && (
@@ -119,4 +126,4 @@ const CheckoutPage = () => {
   );
 };
 
-export default CheckoutPage; 
+export default CheckoutPage;

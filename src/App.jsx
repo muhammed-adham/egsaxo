@@ -31,7 +31,7 @@ const App = () => {
         { path: '/product/:id', element: <ProductPage /> },
         { path: "/about", element: <AboutPage /> },
         { path: "/policy", element: <PolicyPage /> },
-        { path: "/privacy-policy", element: <FullPolicyPage /> },
+        { path: "/privacy", element: <FullPolicyPage /> },
         { path: "/cart", element: <CartPage /> },
         { path: "/checkout", element: <CheckoutPage /> },
         { path: "/help-center", element: <HelpCenterPage /> },

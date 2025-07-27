@@ -1,9 +1,12 @@
 .site-header {
-  background-color: transparent;
+  /* background-color: transparent; */
   padding: var(--spacing-md) 0;
+  background-color: var(--color-background);
+  z-index: 1;
   /* border-bottom: 1px solid var(--color-border); */
   /* box-shadow: var(--box-shadow); */
   /* position: absolute; */
+  position: relative;
   width: 100vw;
 }
 

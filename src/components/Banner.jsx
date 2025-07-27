@@ -6,6 +6,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import { AiFillInstagram, AiFillTikTok } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { GoDot, GoDotFill } from "react-icons/go";
+import AltoSaxo from "./AltoSaxo";
 
 const imagesToPreload = ["/loud-6.jpg", "/saxo.png"];
 
@@ -16,9 +17,9 @@ const Banner = () => {
 
   // Scroll handler for arrow down
   const handleArrowDownClick = () => {
-    const productListSection = document.querySelector('.announcement-bar');
+    const productListSection = document.querySelector(".announcement-bar");
     if (productListSection) {
-      productListSection.scrollIntoView({ behavior: 'smooth' });
+      productListSection.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -66,14 +67,17 @@ const Banner = () => {
         // onMouseLeave={handleMouseLeave}
         style={{ perspective: `${perspective}px` }}
       >
+        {/* <AltoSaxo /> */}
         <div
           className="banner__background-img"
           style={{
-            transform: `translateX(-50%) rotateX(${rotation.x / 2}deg) rotateY(${rotation.y / 2}deg)`
+            transform: `translateX(-50%) rotateX(${
+              rotation.x / 2
+            }deg) rotateY(${rotation.y / 2}deg)`,
           }}
         >
           <img
-            src="/coltrane-5.webp"
+            // src="/sugar.jpeg"
             alt="Banner background"
           />
         </div>
@@ -81,41 +85,45 @@ const Banner = () => {
           className="banner__container-content"
           style={{
             transform: `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,
-            // boxShadow: `0 8px 32px 0 rgba(31, 38, 135, 0.37)`
           }}
         >
-            <div className="banner__container-slogan banner__container-slogan--glow">
-              <h2>Egypt's<br /> <span> Saxophone </span></h2>
-            </div>
-            <div className="banner__container-title">
-              {" "}
-              <h2>Join The Hub</h2>
-            </div>
-            <div className="banner__container-pragraph">
-              <p>
-                <b>More Than Just Accessories</b>
-                <br />
-                We believe that great music starts with great gear, but it thrives
-                through great connections. We're not just selling saxophone
-                accessories – we're cultivating Egypt's most vibrant saxophone
-                community, one player at a time.
-              </p>
-            </div>
-            <div className="banner__container-social">
-              <Link to={'https://www.tiktok.com/@egsaxo'} target="_blank">
-                <AiFillTikTok />
-              </Link>
-              <Link to={'https://www.instagram.com/egsaxo/'} target="_blank" >
-                <AiFillInstagram />
-              </Link>
-            </div>
+          {/* <div className="banner__container-slogan banner__container-slogan--glow">
+            <h2>
+              Egypt's
+              <br /> <span> Saxophone </span>
+            </h2>
+          </div> */}
+          <div className="banner__container-title fade-in-up delay-1">
+            {" "}
+            <h2>Join The Hub</h2>
+          </div>
+          <div className="banner__container-paragraph fade-in-up delay-2">
+            <p>
+              <b>More Than Just Accessories</b>
+              <br />
+              We believe that great music starts with great gear, but it thrives
+              through great connections. We're not just selling saxophone
+              accessories – we're cultivating Egypt's most vibrant saxophone
+              community, one player at a time.
+            </p>
+          </div>
+          <div className="banner__container-social fade-in-up delay-3">
+            <Link to={"https://www.tiktok.com/@egsaxo"} target="_blank">
+              <AiFillTikTok />
+            </Link>
+            <Link to={"https://www.instagram.com/egsaxo/"} target="_blank">
+              <AiFillInstagram />
+            </Link>
+          </div>
         </div>
         <div className="arrow-down" onClick={handleArrowDownClick}>
           {/* <IoIosArrowDown size={"2rem"} /> */}
           <GoDotFill />
         </div>
       </div>
-      <AnnouncementBar announcemen={"Limited stock available – Don’t miss out!"} />
+      <AnnouncementBar
+        announcement={"Limited stock available – Don’t miss out!"}
+      />
     </>
   );
 };

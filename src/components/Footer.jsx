@@ -1,5 +1,5 @@
-import React from 'react';
-import './Footer.css';
+import React from "react";
+import "./Footer.css";
 
 const Footer = () => {
   return (
@@ -31,44 +31,72 @@ const Footer = () => {
         <div className="site-footer__wrapper">
           <div className="footer-content">
             <div className="footer-main">
-              <h3 className="footer-title"><span>EG</span>SAXO</h3>
-              <p className="footer-tagline">Your one-stop shop for saxophone accessories in Egypt.</p>
+              <h3 className="footer-title">
+                <span>EG</span>SAXO
+              </h3>
+              <p className="footer-tagline">
+                Your one-stop shop for saxophone accessories in Egypt.
+              </p>
             </div>
-            
+
             <div className="footer-links">
               <div className="footer-column">
                 <h4>Quick Links</h4>
                 <ul>
-                  <li><a href="#home">Home</a></li>
-                  <li><a href="#products">Products</a></li>
-                  <li><a href="#about">About</a></li>
-                  <li><a href="#contact">Contact</a></li>
+                  <li>
+                    <a href="/shop">Shop</a>
+                  </li>
+                  <li>
+                    <a href="/contact">Contact Us</a>
+                  </li>
+                  <li>
+                    <a href="/about">About</a>
+                  </li>
                 </ul>
               </div>
-              
+
               <div className="footer-column">
                 <h4>Support</h4>
                 <ul>
-                  <li><a href="#faq">FAQ</a></li>
-                  <li><a href="#shipping">Shipping Info</a></li>
-                  <li><a href="#returns">Returns</a></li>
-                  {/* <li><a href="#warranty">Warranty</a></li> */}
+                  <li>
+                    <a href="/policy">Store Policy</a>
+                  </li>
+                  <li>
+                    <a href="/privacy">Privacy Policy</a>
+                  </li>
+                  <li>
+                    <a href="help-center">FAQ</a>
+                  </li>
                 </ul>
               </div>
-              
+
               <div className="footer-column">
                 <h4>Follow Us</h4>
                 <div className="social-links">
-                  <a href="#facebook" className="social-link">TikTok</a>
-                  <a href="#instagram" className="social-link">Instagram</a>
+                  <a
+                    target="_blank"
+                    href="https://www.instagram.com/egsaxo/"
+                    className="social-link"
+                  >
+                    Instagram
+                  </a>
+                  <a
+                    target="_blank"
+                    href="https://www.tiktok.com/@egsaxo"
+                    className="social-link"
+                  >
+                    TikTok
+                  </a>
                   {/* <a href="#youtube" className="social-link">YouTube</a> */}
                 </div>
               </div>
             </div>
           </div>
-          
+
           <div className="footer-bottom">
-            <p>&copy; {new Date().getFullYear()} SaxoEG. All Rights Reserved.</p>
+            <p>
+              &copy; {new Date().getFullYear()} SaxoEG. All Rights Reserved.
+            </p>
           </div>
         </div>
       </footer>
